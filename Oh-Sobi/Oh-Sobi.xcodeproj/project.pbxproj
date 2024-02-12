@@ -66,15 +66,6 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		C6D370B82B7A046A003B86C4 /* LocalStorage */ = {
-			isa = PBXGroup;
-			children = (
-				C6F6AB9F2B065128004473F4 /* Oh_Sobi.xcdatamodeld */,
-				C6F6ABA72B065129004473F4 /* Oh_Sobi.entitlements */,
-			);
-			path = LocalStorage;
-			sourceTree = "<group>";
-		};
 		C6D370B92B7A048C003B86C4 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,9 +96,10 @@
 			children = (
 				C6D370B62B7A0407003B86C4 /* Application */,
 				C6D370B92B7A048C003B86C4 /* Presentation */,
-				C6D370B82B7A046A003B86C4 /* LocalStorage */,
 				C6D370B72B7A0428003B86C4 /* Resource */,
 				C6F6ABA82B065129004473F4 /* Info.plist */,
+				C6F6AB9F2B065128004473F4 /* Oh_Sobi.xcdatamodeld */,
+				C6F6ABA72B065129004473F4 /* Oh_Sobi.entitlements */,
 			);
 			path = "Oh-Sobi";
 			sourceTree = "<group>";
