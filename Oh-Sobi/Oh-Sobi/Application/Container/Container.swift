@@ -6,14 +6,14 @@
 //
 
 protocol Containerable {
-    func mainVC() -> MainVC
+    func homeVC() -> HomeVC
 }
 
 struct Container: Containerable {
     static let shared: Containerable = Container()
     private init() {}
     
-    func mainVC() -> MainVC {
-        return MainVC()
+    func homeVC() -> HomeVC {
+        return HomeVC(viewModel: HomeVM())
     }
 }
