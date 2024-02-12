@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C6D370B52B7A0297003B86C4 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D370B42B7A0297003B86C4 /* Container.swift */; };
 		C6F6AB972B065128004473F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F6AB962B065128004473F4 /* AppDelegate.swift */; };
 		C6F6AB992B065128004473F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F6AB982B065128004473F4 /* SceneDelegate.swift */; };
-		C6F6AB9B2B065128004473F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F6AB9A2B065128004473F4 /* ViewController.swift */; };
+		C6F6AB9B2B065128004473F4 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F6AB9A2B065128004473F4 /* MainVC.swift */; };
 		C6F6ABA12B065128004473F4 /* Oh_Sobi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C6F6AB9F2B065128004473F4 /* Oh_Sobi.xcdatamodeld */; };
 		C6F6ABA32B065129004473F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6F6ABA22B065129004473F4 /* Assets.xcassets */; };
 		C6F6ABA62B065129004473F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6F6ABA42B065129004473F4 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C6D370B42B7A0297003B86C4 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		C6F6AB932B065128004473F4 /* Oh-Sobi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oh-Sobi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F6AB962B065128004473F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6F6AB982B065128004473F4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C6F6AB9A2B065128004473F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C6F6AB9A2B065128004473F4 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		C6F6ABA02B065128004473F4 /* Oh_Sobi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Oh_Sobi.xcdatamodel; sourceTree = "<group>"; };
 		C6F6ABA22B065129004473F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C6F6ABA52B065129004473F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +40,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C6D370B32B7A0283003B86C4 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				C6D370B42B7A0297003B86C4 /* Container.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		C6D370B62B7A0407003B86C4 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				C6F6AB962B065128004473F4 /* AppDelegate.swift */,
+				C6F6AB982B065128004473F4 /* SceneDelegate.swift */,
+				C6D370B32B7A0283003B86C4 /* Container */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		C6D370B72B7A0428003B86C4 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				C6F6ABA22B065129004473F4 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		C6D370B82B7A046A003B86C4 /* LocalStorage */ = {
+			isa = PBXGroup;
+			children = (
+				C6F6AB9F2B065128004473F4 /* Oh_Sobi.xcdatamodeld */,
+				C6F6ABA72B065129004473F4 /* Oh_Sobi.entitlements */,
+			);
+			path = LocalStorage;
+			sourceTree = "<group>";
+		};
+		C6D370B92B7A048C003B86C4 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C6F6AB9A2B065128004473F4 /* MainVC.swift */,
+				C6F6ABA42B065129004473F4 /* LaunchScreen.storyboard */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		C6F6AB8A2B065128004473F4 = {
 			isa = PBXGroup;
 			children = (
@@ -57,14 +103,11 @@
 		C6F6AB952B065128004473F4 /* Oh-Sobi */ = {
 			isa = PBXGroup;
 			children = (
-				C6F6AB962B065128004473F4 /* AppDelegate.swift */,
-				C6F6AB982B065128004473F4 /* SceneDelegate.swift */,
-				C6F6AB9A2B065128004473F4 /* ViewController.swift */,
-				C6F6ABA22B065129004473F4 /* Assets.xcassets */,
-				C6F6ABA42B065129004473F4 /* LaunchScreen.storyboard */,
-				C6F6ABA72B065129004473F4 /* Oh_Sobi.entitlements */,
+				C6D370B62B7A0407003B86C4 /* Application */,
+				C6D370B92B7A048C003B86C4 /* Presentation */,
+				C6D370B82B7A046A003B86C4 /* LocalStorage */,
+				C6D370B72B7A0428003B86C4 /* Resource */,
 				C6F6ABA82B065129004473F4 /* Info.plist */,
-				C6F6AB9F2B065128004473F4 /* Oh_Sobi.xcdatamodeld */,
 			);
 			path = "Oh-Sobi";
 			sourceTree = "<group>";
@@ -139,8 +182,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6F6AB9B2B065128004473F4 /* ViewController.swift in Sources */,
+				C6F6AB9B2B065128004473F4 /* MainVC.swift in Sources */,
 				C6F6AB972B065128004473F4 /* AppDelegate.swift in Sources */,
+				C6D370B52B7A0297003B86C4 /* Container.swift in Sources */,
 				C6F6AB992B065128004473F4 /* SceneDelegate.swift in Sources */,
 				C6F6ABA12B065128004473F4 /* Oh_Sobi.xcdatamodeld in Sources */,
 			);
