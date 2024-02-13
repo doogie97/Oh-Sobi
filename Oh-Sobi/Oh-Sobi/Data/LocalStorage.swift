@@ -13,6 +13,7 @@ protocol LocalStorageable {
 
 //MARK: - 더미 데이터로 저장소 임시구현
 final class LocalStorage: LocalStorageable {
+    static let shared = LocalStorage()
     private var montlyConsumptionDTO = [MontlyConsumptionDTO]()
     private init() {
         montlyConsumptionDTO.append(dummyMonthlyDTO(month: 1))
