@@ -39,7 +39,7 @@ extension LocalStorage {
                                     dailyConsumptionList: dailyConsumptionList)
     }
     
-    func daysInMonth(month: Int) -> Int {
+    private func daysInMonth(month: Int) -> Int {
         if month == 3 {
             return 14
         }
