@@ -15,7 +15,7 @@
 		C6CFAD1E2B7B9BA000D170D7 /* DailyConsumption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD1D2B7B9BA000D170D7 /* DailyConsumption.swift */; };
 		C6CFAD262B7B9D2600D170D7 /* MontlyConsumptionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD252B7B9D2600D170D7 /* MontlyConsumptionDTO.swift */; };
 		C6CFAD282B7B9D5800D170D7 /* DailyConsumptionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD272B7B9D5800D170D7 /* DailyConsumptionDTO.swift */; };
-		C6CFAD302B7BA6B700D170D7 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD2F2B7BA6B700D170D7 /* LocalStorage.swift */; };
+		C6CFAD302B7BA6B700D170D7 /* LocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD2F2B7BA6B700D170D7 /* LocalStorageManager.swift */; };
 		C6CFAD322B7BB51700D170D7 /* ConsumptionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD312B7BB51700D170D7 /* ConsumptionDTO.swift */; };
 		C6CFAD342B7BBEEF00D170D7 /* GetMonthlyConsumptionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD332B7BBEEF00D170D7 /* GetMonthlyConsumptionUseCase.swift */; };
 		C6CFAD362B7BBFE400D170D7 /* Consumption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD352B7BBFE400D170D7 /* Consumption.swift */; };
@@ -36,7 +36,7 @@
 		C6CFAD1D2B7B9BA000D170D7 /* DailyConsumption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyConsumption.swift; sourceTree = "<group>"; };
 		C6CFAD252B7B9D2600D170D7 /* MontlyConsumptionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MontlyConsumptionDTO.swift; sourceTree = "<group>"; };
 		C6CFAD272B7B9D5800D170D7 /* DailyConsumptionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyConsumptionDTO.swift; sourceTree = "<group>"; };
-		C6CFAD2F2B7BA6B700D170D7 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
+		C6CFAD2F2B7BA6B700D170D7 /* LocalStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageManager.swift; sourceTree = "<group>"; };
 		C6CFAD312B7BB51700D170D7 /* ConsumptionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumptionDTO.swift; sourceTree = "<group>"; };
 		C6CFAD332B7BBEEF00D170D7 /* GetMonthlyConsumptionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMonthlyConsumptionUseCase.swift; sourceTree = "<group>"; };
 		C6CFAD352B7BBFE400D170D7 /* Consumption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consumption.swift; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 		C6CFAD212B7B9C9900D170D7 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				C6CFAD2F2B7BA6B700D170D7 /* LocalStorage.swift */,
+				C6CFAD2F2B7BA6B700D170D7 /* LocalStorageManager.swift */,
 				C6CFAD242B7B9D1600D170D7 /* Models */,
 			);
 			path = Data;
@@ -291,7 +291,7 @@
 				C6856AF62B7A062F00528493 /* HomeView.swift in Sources */,
 				C6F6AB992B065128004473F4 /* SceneDelegate.swift in Sources */,
 				C6CFAD362B7BBFE400D170D7 /* Consumption.swift in Sources */,
-				C6CFAD302B7BA6B700D170D7 /* LocalStorage.swift in Sources */,
+				C6CFAD302B7BA6B700D170D7 /* LocalStorageManager.swift in Sources */,
 				C6CFAD282B7B9D5800D170D7 /* DailyConsumptionDTO.swift in Sources */,
 				C6F6ABA12B065128004473F4 /* Oh_Sobi.xcdatamodeld in Sources */,
 				C6CFAD342B7BBEEF00D170D7 /* GetMonthlyConsumptionUseCase.swift in Sources */,

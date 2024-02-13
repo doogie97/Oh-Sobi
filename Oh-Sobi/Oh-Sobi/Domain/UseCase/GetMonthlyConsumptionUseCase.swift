@@ -6,8 +6,14 @@
 //
 
 struct GetMonthlyConsumptionUseCase {
+    private let localStorage: LocalStorageManagerable
+    
+    init(localStorage: LocalStorageManagerable) {
+        self.localStorage = localStorage
+    }
+    
     func execute(year: Int, month: Int) -> MonthlyConsumption {
-        let dto = LocalStorage.shared.getMontlyConsumption(year: year, month: month)
+        let dto = localStorage.getMontlyConsumption(year: year, month: month)
         return MonthlyConsumption(year: dto?.year ?? 0,
                                   month: dto?.month ?? 0,
                                   limitAmount: dto?.limitAmount ?? 0,

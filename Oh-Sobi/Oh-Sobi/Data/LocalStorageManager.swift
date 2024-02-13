@@ -7,15 +7,14 @@
 
 import Foundation
 
-protocol LocalStorageable {
+protocol LocalStorageManagerable {
     func getMontlyConsumption(year: Int, month: Int) -> MontlyConsumptionDTO?
 }
 
 //MARK: - 더미 데이터로 저장소 임시구현
-final class LocalStorage: LocalStorageable {
-    static let shared = LocalStorage()
+final class LocalStorageManager: LocalStorageManagerable {
     private var montlyConsumptionDTO = [MontlyConsumptionDTO]()
-    private init() {
+    init() {
         montlyConsumptionDTO.append(dummyMonthlyDTO(month: 1))
         montlyConsumptionDTO.append(dummyMonthlyDTO(month: 2))
         montlyConsumptionDTO.append(dummyMonthlyDTO(month: 3))
@@ -27,7 +26,7 @@ final class LocalStorage: LocalStorageable {
 }
 
 //MARK: - DummyCode
-extension LocalStorage {
+extension LocalStorageManager {
     private func dummyMonthlyDTO(month: Int) -> MontlyConsumptionDTO {
         var dailyConsumptionList = [DailyConsumptionDTO]()
         for i in 0..<daysInMonth(month: month) {
