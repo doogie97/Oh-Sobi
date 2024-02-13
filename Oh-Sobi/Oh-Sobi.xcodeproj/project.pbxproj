@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71E7C14F2B7B428C00E7BD1C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 71E7C14E2B7B428C00E7BD1C /* SnapKit */; };
 		C6856AF62B7A062F00528493 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6856AF52B7A062F00528493 /* HomeView.swift */; };
 		C6856AF82B7A063500528493 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6856AF72B7A063500528493 /* HomeVM.swift */; };
 		C6D370B52B7A0297003B86C4 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D370B42B7A0297003B86C4 /* Container.swift */; };
@@ -38,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71E7C14F2B7B428C00E7BD1C /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +144,9 @@
 			dependencies = (
 			);
 			name = "Oh-Sobi";
+			packageProductDependencies = (
+				71E7C14E2B7B428C00E7BD1C /* SnapKit */,
+			);
 			productName = "Oh-Sobi";
 			productReference = C6F6AB932B065128004473F4 /* Oh-Sobi.app */;
 			productType = "com.apple.product-type.application";
@@ -170,6 +175,9 @@
 				Base,
 			);
 			mainGroup = C6F6AB8A2B065128004473F4;
+			packageReferences = (
+				71E7C14D2B7B428C00E7BD1C /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = C6F6AB942B065128004473F4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -429,6 +437,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		71E7C14D2B7B428C00E7BD1C /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		71E7C14E2B7B428C00E7BD1C /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 71E7C14D2B7B428C00E7BD1C /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		C6F6AB9F2B065128004473F4 /* Oh_Sobi.xcdatamodeld */ = {
