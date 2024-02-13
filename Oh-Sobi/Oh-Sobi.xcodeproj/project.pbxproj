@@ -13,6 +13,8 @@
 		C6856AF82B7A063500528493 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6856AF72B7A063500528493 /* HomeVM.swift */; };
 		C6CFAD1C2B7B981600D170D7 /* MonthlyConsumption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD1B2B7B981600D170D7 /* MonthlyConsumption.swift */; };
 		C6CFAD1E2B7B9BA000D170D7 /* DailyConsumption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD1D2B7B9BA000D170D7 /* DailyConsumption.swift */; };
+		C6CFAD262B7B9D2600D170D7 /* MontlyConsumptionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD252B7B9D2600D170D7 /* MontlyConsumptionDTO.swift */; };
+		C6CFAD282B7B9D5800D170D7 /* DailyConsumptionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD272B7B9D5800D170D7 /* DailyConsumptionDTO.swift */; };
 		C6D370B52B7A0297003B86C4 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D370B42B7A0297003B86C4 /* Container.swift */; };
 		C6F6AB972B065128004473F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F6AB962B065128004473F4 /* AppDelegate.swift */; };
 		C6F6AB992B065128004473F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F6AB982B065128004473F4 /* SceneDelegate.swift */; };
@@ -28,6 +30,8 @@
 		C6856AF72B7A063500528493 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		C6CFAD1B2B7B981600D170D7 /* MonthlyConsumption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyConsumption.swift; sourceTree = "<group>"; };
 		C6CFAD1D2B7B9BA000D170D7 /* DailyConsumption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyConsumption.swift; sourceTree = "<group>"; };
+		C6CFAD252B7B9D2600D170D7 /* MontlyConsumptionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MontlyConsumptionDTO.swift; sourceTree = "<group>"; };
+		C6CFAD272B7B9D5800D170D7 /* DailyConsumptionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyConsumptionDTO.swift; sourceTree = "<group>"; };
 		C6D370B42B7A0297003B86C4 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		C6F6AB932B065128004473F4 /* Oh-Sobi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oh-Sobi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F6AB962B065128004473F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +107,23 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		C6CFAD212B7B9C9900D170D7 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C6CFAD242B7B9D1600D170D7 /* Models */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C6CFAD242B7B9D1600D170D7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C6CFAD252B7B9D2600D170D7 /* MontlyConsumptionDTO.swift */,
+				C6CFAD272B7B9D5800D170D7 /* DailyConsumptionDTO.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		C6D370B32B7A0283003B86C4 /* Container */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +181,7 @@
 				C6D370B62B7A0407003B86C4 /* Application */,
 				C6CFAD182B7B97E300D170D7 /* Domain */,
 				C6D370B92B7A048C003B86C4 /* Presentation */,
+				C6CFAD212B7B9C9900D170D7 /* Data */,
 				71E7C14A2B7B425100E7BD1C /* Utils */,
 				C6D370B72B7A0428003B86C4 /* Resource */,
 				C6F6ABA82B065129004473F4 /* Info.plist */,
@@ -250,10 +272,12 @@
 				C6F6AB972B065128004473F4 /* AppDelegate.swift in Sources */,
 				C6856AF82B7A063500528493 /* HomeVM.swift in Sources */,
 				71E7C14C2B7B426300E7BD1C /* CustomHalfModal.swift in Sources */,
+				C6CFAD262B7B9D2600D170D7 /* MontlyConsumptionDTO.swift in Sources */,
 				C6CFAD1E2B7B9BA000D170D7 /* DailyConsumption.swift in Sources */,
 				C6D370B52B7A0297003B86C4 /* Container.swift in Sources */,
 				C6856AF62B7A062F00528493 /* HomeView.swift in Sources */,
 				C6F6AB992B065128004473F4 /* SceneDelegate.swift in Sources */,
+				C6CFAD282B7B9D5800D170D7 /* DailyConsumptionDTO.swift in Sources */,
 				C6F6ABA12B065128004473F4 /* Oh_Sobi.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
