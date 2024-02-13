@@ -173,7 +173,7 @@ final class CustomHalfModal: UIViewController {
             gestureView.snp.makeConstraints {
                 $0.top.equalToSuperview()
                 $0.leading.trailing.equalToSuperview()
-                $0.bottom.equalTo(contentsView.snp.top).inset(16)
+                $0.bottom.equalTo(contentsView.snp.top).inset(28)
             }
         }
     }
