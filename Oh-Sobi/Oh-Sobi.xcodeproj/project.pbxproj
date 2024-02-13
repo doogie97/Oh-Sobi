@@ -30,8 +30,10 @@
 		C6856AF72B7A063500528493 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		C6CFAD1B2B7B981600D170D7 /* MonthlyConsumption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyConsumption.swift; sourceTree = "<group>"; };
 		C6CFAD1D2B7B9BA000D170D7 /* DailyConsumption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyConsumption.swift; sourceTree = "<group>"; };
+		C6CFAD222B7B9CA900D170D7 /* Repositoryable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositoryable.swift; sourceTree = "<group>"; };
 		C6CFAD252B7B9D2600D170D7 /* MontlyConsumptionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MontlyConsumptionDTO.swift; sourceTree = "<group>"; };
 		C6CFAD272B7B9D5800D170D7 /* DailyConsumptionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyConsumptionDTO.swift; sourceTree = "<group>"; };
+		C6CFAD292B7B9E2400D170D7 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		C6D370B42B7A0297003B86C4 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		C6F6AB932B065128004473F4 /* Oh-Sobi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oh-Sobi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F6AB962B065128004473F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +112,8 @@
 		C6CFAD212B7B9C9900D170D7 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				C6CFAD222B7B9CA900D170D7 /* Repositoryable.swift */,
+				C6CFAD292B7B9E2400D170D7 /* Repository.swift */,
 				C6CFAD242B7B9D1600D170D7 /* Models */,
 			);
 			path = Data;
@@ -269,9 +273,11 @@
 			files = (
 				C6CFAD1C2B7B981600D170D7 /* MonthlyConsumption.swift in Sources */,
 				C6F6AB9B2B065128004473F4 /* HomeVC.swift in Sources */,
+				C6CFAD2A2B7B9E2400D170D7 /* Repository.swift in Sources */,
 				C6F6AB972B065128004473F4 /* AppDelegate.swift in Sources */,
 				C6856AF82B7A063500528493 /* HomeVM.swift in Sources */,
 				71E7C14C2B7B426300E7BD1C /* CustomHalfModal.swift in Sources */,
+				C6CFAD232B7B9CA900D170D7 /* Repositoryable.swift in Sources */,
 				C6CFAD262B7B9D2600D170D7 /* MontlyConsumptionDTO.swift in Sources */,
 				C6CFAD1E2B7B9BA000D170D7 /* DailyConsumption.swift in Sources */,
 				C6D370B52B7A0297003B86C4 /* Container.swift in Sources */,

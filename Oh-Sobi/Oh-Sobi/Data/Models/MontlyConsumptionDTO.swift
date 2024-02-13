@@ -11,8 +11,6 @@ struct MontlyConsumptionDTO { //일단은 DTO라고 했으나 추후 로컬 저�
     let id: UUID?
     let year: Int?
     let month: Int?
-    let spentAmount: Int?
     let limitAmt: Int?
-    let remainAmt: Int?
-    let consumptionList: [DailyConsumption]?
+    let consumptionList: [DailyConsumptionDTO]?
 }
