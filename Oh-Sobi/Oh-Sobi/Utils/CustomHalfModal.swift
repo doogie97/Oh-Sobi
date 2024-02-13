@@ -151,6 +151,7 @@ final class CustomHalfModal: UIViewController {
         if let contentsView = contentsView {
             contentsView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
             contentsView.layer.cornerRadius = 6
+            contentsView.clipsToBounds = true
             self.view.addSubview(contentsView)
             contentsView.snp.makeConstraints {
                 $0.top.equalTo(self.view.snp.bottom)
