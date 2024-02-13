@@ -17,6 +17,7 @@
 		C6CFAD282B7B9D5800D170D7 /* DailyConsumptionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD272B7B9D5800D170D7 /* DailyConsumptionDTO.swift */; };
 		C6CFAD302B7BA6B700D170D7 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD2F2B7BA6B700D170D7 /* LocalStorage.swift */; };
 		C6CFAD322B7BB51700D170D7 /* ConsumptionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD312B7BB51700D170D7 /* ConsumptionDTO.swift */; };
+		C6CFAD342B7BBEEF00D170D7 /* GetMonthlyConsumptionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD332B7BBEEF00D170D7 /* GetMonthlyConsumptionUseCase.swift */; };
 		C6CFAD362B7BBFE400D170D7 /* Consumption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD352B7BBFE400D170D7 /* Consumption.swift */; };
 		C6D370B52B7A0297003B86C4 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D370B42B7A0297003B86C4 /* Container.swift */; };
 		C6F6AB972B065128004473F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F6AB962B065128004473F4 /* AppDelegate.swift */; };
@@ -37,6 +38,7 @@
 		C6CFAD272B7B9D5800D170D7 /* DailyConsumptionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyConsumptionDTO.swift; sourceTree = "<group>"; };
 		C6CFAD2F2B7BA6B700D170D7 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		C6CFAD312B7BB51700D170D7 /* ConsumptionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumptionDTO.swift; sourceTree = "<group>"; };
+		C6CFAD332B7BBEEF00D170D7 /* GetMonthlyConsumptionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMonthlyConsumptionUseCase.swift; sourceTree = "<group>"; };
 		C6CFAD352B7BBFE400D170D7 /* Consumption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consumption.swift; sourceTree = "<group>"; };
 		C6D370B42B7A0297003B86C4 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		C6F6AB932B065128004473F4 /* Oh-Sobi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oh-Sobi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +102,7 @@
 		C6CFAD192B7B97F700D170D7 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				C6CFAD332B7BBEEF00D170D7 /* GetMonthlyConsumptionUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				C6CFAD302B7BA6B700D170D7 /* LocalStorage.swift in Sources */,
 				C6CFAD282B7B9D5800D170D7 /* DailyConsumptionDTO.swift in Sources */,
 				C6F6ABA12B065128004473F4 /* Oh_Sobi.xcdatamodeld in Sources */,
+				C6CFAD342B7BBEEF00D170D7 /* GetMonthlyConsumptionUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
