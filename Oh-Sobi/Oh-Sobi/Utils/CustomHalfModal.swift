@@ -135,8 +135,7 @@ final class CustomHalfModal: UIViewController {
                     }
                 }
                 self?.view.layoutIfNeeded()
-            }
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + duration) { [weak self] in
+            } completion: { [weak self] _ in
                 self?.dismiss(animated: false)
             }
         }
