@@ -17,6 +17,7 @@
 		C6CFAD282B7B9D5800D170D7 /* DailyConsumptionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD272B7B9D5800D170D7 /* DailyConsumptionDTO.swift */; };
 		C6CFAD302B7BA6B700D170D7 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD2F2B7BA6B700D170D7 /* LocalStorage.swift */; };
 		C6CFAD322B7BB51700D170D7 /* ConsumptionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD312B7BB51700D170D7 /* ConsumptionDTO.swift */; };
+		C6CFAD362B7BBFE400D170D7 /* Consumption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD352B7BBFE400D170D7 /* Consumption.swift */; };
 		C6D370B52B7A0297003B86C4 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D370B42B7A0297003B86C4 /* Container.swift */; };
 		C6F6AB972B065128004473F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F6AB962B065128004473F4 /* AppDelegate.swift */; };
 		C6F6AB992B065128004473F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F6AB982B065128004473F4 /* SceneDelegate.swift */; };
@@ -36,6 +37,7 @@
 		C6CFAD272B7B9D5800D170D7 /* DailyConsumptionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyConsumptionDTO.swift; sourceTree = "<group>"; };
 		C6CFAD2F2B7BA6B700D170D7 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		C6CFAD312B7BB51700D170D7 /* ConsumptionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumptionDTO.swift; sourceTree = "<group>"; };
+		C6CFAD352B7BBFE400D170D7 /* Consumption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consumption.swift; sourceTree = "<group>"; };
 		C6D370B42B7A0297003B86C4 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		C6F6AB932B065128004473F4 /* Oh-Sobi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oh-Sobi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F6AB962B065128004473F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				C6CFAD1B2B7B981600D170D7 /* MonthlyConsumption.swift */,
 				C6CFAD1D2B7B9BA000D170D7 /* DailyConsumption.swift */,
+				C6CFAD352B7BBFE400D170D7 /* Consumption.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				C6D370B52B7A0297003B86C4 /* Container.swift in Sources */,
 				C6856AF62B7A062F00528493 /* HomeView.swift in Sources */,
 				C6F6AB992B065128004473F4 /* SceneDelegate.swift in Sources */,
+				C6CFAD362B7BBFE400D170D7 /* Consumption.swift in Sources */,
 				C6CFAD302B7BA6B700D170D7 /* LocalStorage.swift in Sources */,
 				C6CFAD282B7B9D5800D170D7 /* DailyConsumptionDTO.swift in Sources */,
 				C6F6ABA12B065128004473F4 /* Oh_Sobi.xcdatamodeld in Sources */,
