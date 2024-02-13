@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71E7C14C2B7B426300E7BD1C /* CustomHalfModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7C14B2B7B426300E7BD1C /* CustomHalfModal.swift */; };
 		71E7C14F2B7B428C00E7BD1C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 71E7C14E2B7B428C00E7BD1C /* SnapKit */; };
 		C6856AF62B7A062F00528493 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6856AF52B7A062F00528493 /* HomeView.swift */; };
 		C6856AF82B7A063500528493 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6856AF72B7A063500528493 /* HomeVM.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		71E7C14B2B7B426300E7BD1C /* CustomHalfModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHalfModal.swift; sourceTree = "<group>"; };
 		C6856AF52B7A062F00528493 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C6856AF72B7A063500528493 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		C6D370B42B7A0297003B86C4 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
@@ -46,6 +48,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		71E7C14A2B7B425100E7BD1C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				71E7C14B2B7B426300E7BD1C /* CustomHalfModal.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		C6856AF42B7A060800528493 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +130,7 @@
 			children = (
 				C6D370B62B7A0407003B86C4 /* Application */,
 				C6D370B92B7A048C003B86C4 /* Presentation */,
+				71E7C14A2B7B425100E7BD1C /* Utils */,
 				C6D370B72B7A0428003B86C4 /* Resource */,
 				C6F6ABA82B065129004473F4 /* Info.plist */,
 				C6F6AB9F2B065128004473F4 /* Oh_Sobi.xcdatamodeld */,
@@ -207,6 +218,7 @@
 				C6F6AB9B2B065128004473F4 /* HomeVC.swift in Sources */,
 				C6F6AB972B065128004473F4 /* AppDelegate.swift in Sources */,
 				C6856AF82B7A063500528493 /* HomeVM.swift in Sources */,
+				71E7C14C2B7B426300E7BD1C /* CustomHalfModal.swift in Sources */,
 				C6D370B52B7A0297003B86C4 /* Container.swift in Sources */,
 				C6856AF62B7A062F00528493 /* HomeView.swift in Sources */,
 				C6F6AB992B065128004473F4 /* SceneDelegate.swift in Sources */,
