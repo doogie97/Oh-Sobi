@@ -9,16 +9,41 @@ import UIKit
 import SnapKit
 
 final class HomeView: UIView {
-    private lazy var dateLabel = pretendardLabel(family: .Black, size: 40, color: .mainred, text: "asdfasdf", textAlignment: .center)
+    private lazy var dayLabel = pretendardLabel(family: .Bold, size: 18)
+    private lazy var dateLabel = pretendardLabel(family: .Regular, size: 14)
     func setViewContents() {
-        self.backgroundColor = .systemBlue
+        setDateLabel()
+        
         setLayout()
     }
     
+    private func setDateLabel() {
+        let currentDate = Date()
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.dateFormat = "EEEE"
+        let dayString = dateFormatter.string(from: currentDate)
+        
+        dateFormatter.dateFormat = "yyyy년 M월 d일"
+        let dateString = dateFormatter.string(from: currentDate)
+        
+        dayLabel.text = dayString
+        dateLabel.text = dateString
+    }
+    
     private func setLayout() {
+        self.addSubview(dayLabel)
         self.addSubview(dateLabel)
+        
+        dayLabel.snp.makeConstraints {
+            $0.top.equalTo(safeAreaLayoutGuide).inset(margin(.height, 20))
+            $0.leading.equalToSuperview().inset(margin(.width, 24))
+        }
+        
         dateLabel.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.equalTo(dayLabel.snp.bottom).inset(margin(.height, -4))
+            $0.leading.equalTo(dayLabel)
         }
     }
 }
