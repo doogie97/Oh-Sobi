@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 final class HomeView: UIView {
-    private lazy var dateLabel = pretendardLabel(family: .Black, size: 40, text: "asdfasdf", textAlignment: .center)
+    private lazy var dateLabel = pretendardLabel(family: .Black, size: 40, color: .mainred, text: "asdfasdf", textAlignment: .center)
     func setViewContents() {
         self.backgroundColor = .systemBlue
         setLayout()
