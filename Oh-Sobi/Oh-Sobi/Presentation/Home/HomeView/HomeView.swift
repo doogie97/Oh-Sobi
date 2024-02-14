@@ -6,9 +6,19 @@
 //
 
 import UIKit
+import SnapKit
 
 final class HomeView: UIView {
+    private lazy var dateLabel = pretendardLabel(family: .Black, size: 40, text: "asdfasdf", textAlignment: .center)
     func setViewContents() {
         self.backgroundColor = .systemBlue
+        setLayout()
+    }
+    
+    private func setLayout() {
+        self.addSubview(dateLabel)
+        dateLabel.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
     }
 }

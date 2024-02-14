@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		71E7C14C2B7B426300E7BD1C /* CustomHalfModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7C14B2B7B426300E7BD1C /* CustomHalfModal.swift */; };
 		71E7C14F2B7B428C00E7BD1C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 71E7C14E2B7B428C00E7BD1C /* SnapKit */; };
+		C62DA29C2B7CFD5F00283F0A /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C62DA2982B7CFD5F00283F0A /* Pretendard-SemiBold.otf */; };
+		C62DA29D2B7CFD5F00283F0A /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C62DA2992B7CFD5F00283F0A /* Pretendard-Bold.otf */; };
+		C62DA29E2B7CFD5F00283F0A /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = C62DA29A2B7CFD5F00283F0A /* Pretendard-Black.otf */; };
+		C62DA29F2B7CFD5F00283F0A /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C62DA29B2B7CFD5F00283F0A /* Pretendard-Regular.otf */; };
+		C62DA2A22B7CFDA800283F0A /* UIFont + Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DA2A12B7CFDA800283F0A /* UIFont + Extenstion.swift */; };
+		C62DA2A42B7CFE4D00283F0A /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DA2A32B7CFE4D00283F0A /* UIView + Extension.swift */; };
 		C6856AF62B7A062F00528493 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6856AF52B7A062F00528493 /* HomeView.swift */; };
 		C6856AF82B7A063500528493 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6856AF72B7A063500528493 /* HomeVM.swift */; };
 		C6CFAD1C2B7B981600D170D7 /* MonthlyConsumption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD1B2B7B981600D170D7 /* MonthlyConsumption.swift */; };
@@ -30,6 +36,12 @@
 
 /* Begin PBXFileReference section */
 		71E7C14B2B7B426300E7BD1C /* CustomHalfModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHalfModal.swift; sourceTree = "<group>"; };
+		C62DA2982B7CFD5F00283F0A /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-SemiBold.otf"; path = "../../../../../../Pretendard-1.3.9/public/static/Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		C62DA2992B7CFD5F00283F0A /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Bold.otf"; path = "../../../../../../Pretendard-1.3.9/public/static/Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		C62DA29A2B7CFD5F00283F0A /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Black.otf"; path = "../../../../../../Pretendard-1.3.9/public/static/Pretendard-Black.otf"; sourceTree = "<group>"; };
+		C62DA29B2B7CFD5F00283F0A /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Regular.otf"; path = "../../../../../../Pretendard-1.3.9/public/static/Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		C62DA2A12B7CFDA800283F0A /* UIFont + Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extenstion.swift"; sourceTree = "<group>"; };
+		C62DA2A32B7CFE4D00283F0A /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		C6856AF52B7A062F00528493 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C6856AF72B7A063500528493 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		C6CFAD1B2B7B981600D170D7 /* MonthlyConsumption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyConsumption.swift; sourceTree = "<group>"; };
@@ -68,8 +80,29 @@
 			isa = PBXGroup;
 			children = (
 				71E7C14B2B7B426300E7BD1C /* CustomHalfModal.swift */,
+				C62DA2A02B7CFD8400283F0A /* Extension */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		C62DA2972B7CFD2A00283F0A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C62DA29A2B7CFD5F00283F0A /* Pretendard-Black.otf */,
+				C62DA2992B7CFD5F00283F0A /* Pretendard-Bold.otf */,
+				C62DA29B2B7CFD5F00283F0A /* Pretendard-Regular.otf */,
+				C62DA2982B7CFD5F00283F0A /* Pretendard-SemiBold.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		C62DA2A02B7CFD8400283F0A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C62DA2A12B7CFDA800283F0A /* UIFont + Extenstion.swift */,
+				C62DA2A32B7CFE4D00283F0A /* UIView + Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		C6856AF42B7A060800528493 /* Home */ = {
@@ -158,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				C6F6ABA22B065129004473F4 /* Assets.xcassets */,
+				C62DA2972B7CFD2A00283F0A /* Fonts */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -267,8 +301,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C62DA29C2B7CFD5F00283F0A /* Pretendard-SemiBold.otf in Resources */,
+				C62DA29F2B7CFD5F00283F0A /* Pretendard-Regular.otf in Resources */,
+				C62DA29D2B7CFD5F00283F0A /* Pretendard-Bold.otf in Resources */,
 				C6F6ABA62B065129004473F4 /* LaunchScreen.storyboard in Resources */,
 				C6F6ABA32B065129004473F4 /* Assets.xcassets in Resources */,
+				C62DA29E2B7CFD5F00283F0A /* Pretendard-Black.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,8 +325,10 @@
 				71E7C14C2B7B426300E7BD1C /* CustomHalfModal.swift in Sources */,
 				C6CFAD262B7B9D2600D170D7 /* MontlyConsumptionDTO.swift in Sources */,
 				C6CFAD1E2B7B9BA000D170D7 /* DailyConsumption.swift in Sources */,
+				C62DA2A42B7CFE4D00283F0A /* UIView + Extension.swift in Sources */,
 				C6D370B52B7A0297003B86C4 /* Container.swift in Sources */,
 				C6856AF62B7A062F00528493 /* HomeView.swift in Sources */,
+				C62DA2A22B7CFDA800283F0A /* UIFont + Extenstion.swift in Sources */,
 				C6F6AB992B065128004473F4 /* SceneDelegate.swift in Sources */,
 				C6CFAD362B7BBFE400D170D7 /* Consumption.swift in Sources */,
 				C6CFAD302B7BA6B700D170D7 /* LocalStorageManager.swift in Sources */,
