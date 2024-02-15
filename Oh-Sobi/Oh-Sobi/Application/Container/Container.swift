@@ -15,6 +15,7 @@ final class Container: Containerable {
     private let localStorageManager = LocalStorageManager()
     
     func homeVC() -> HomeVC {
-        return HomeVC(viewModel: HomeVM(getMonthlyConsumptionUseCase: GetMonthlyConsumptionUseCase(localStorage: localStorageManager)))
+        return HomeVC(viewModel: HomeVM(getMonthlyConsumptionUseCase: GetMonthlyConsumptionUseCase(localStorage: localStorageManager),
+                                        getWeeklyConsumptionUseCase: GetWeeklyConsumptionUseCase(localStorage: localStorageManager)))
     }
 }

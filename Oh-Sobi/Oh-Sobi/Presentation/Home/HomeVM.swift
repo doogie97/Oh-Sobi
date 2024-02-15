@@ -17,23 +17,23 @@ protocol HomeVMOutput {}
 
 final class HomeVM: HomeVMable {
     private let getMonthlyConsumptionUseCase: GetMonthlyConsumptionUseCase
+    private let getWeeklyConsumptionUseCase: GetWeeklyConsumptionUseCase
     
-    init(getMonthlyConsumptionUseCase: GetMonthlyConsumptionUseCase) {
+    init(getMonthlyConsumptionUseCase: GetMonthlyConsumptionUseCase,
+         getWeeklyConsumptionUseCase: GetWeeklyConsumptionUseCase) {
         self.getMonthlyConsumptionUseCase = getMonthlyConsumptionUseCase
+        self.getWeeklyConsumptionUseCase = getWeeklyConsumptionUseCase
     }
     
     func getMonthlyConsumption() {
-        let date = Date()
-
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.year, .month], from: date)
-        guard let year = components.year,
-              let month = components.month else {
-            debugPrint("월간 소비 호출 에러")
-            return
+        let todayYearMonthDay = Date().yearMonthDay()
+        let monthlyConsumption = getMonthlyConsumptionUseCase.execute(year: todayYearMonthDay.year,
+                                                                      month: todayYearMonthDay.month)
+        let weeklyConsumption = getWeeklyConsumptionUseCase.execute(year: todayYearMonthDay.year,
+                                                                    month: todayYearMonthDay.month,
+                                                                    startDay: todayYearMonthDay.day)
+        weeklyConsumption.forEach {
+            print($0?.day)
         }
-        let monthlyConsumption = getMonthlyConsumptionUseCase.execute(year: year, month: month)
-        
-        print(monthlyConsumption)
     }
 }
