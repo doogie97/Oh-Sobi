@@ -28,7 +28,7 @@ final class HomeView: UIView {
         dateFormatter.dateFormat = "EEEE"
         let dayString = dateFormatter.string(from: currentDate)
         
-        dateFormatter.dateFormat = "yyyy년 M월 d일"
+        dateFormatter.dateFormat = "yyyy년 MM월 dd일"
         let dateString = dateFormatter.string(from: currentDate)
         
         dayLabel.text = dayString
