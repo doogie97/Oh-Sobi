@@ -11,9 +11,12 @@ import SnapKit
 final class HomeView: UIView {
     private lazy var dayLabel = pretendardLabel(family: .Bold, size: 18)
     private lazy var dateLabel = pretendardLabel(family: .Regular, size: 14)
+    
+    private lazy var homeSectionView = HomeSectionView()
+    
     func setViewContents() {
+        homeSectionView.setViewContents()
         setDateLabel()
-        
         setLayout()
     }
     
@@ -35,6 +38,7 @@ final class HomeView: UIView {
     private func setLayout() {
         self.addSubview(dayLabel)
         self.addSubview(dateLabel)
+        self.addSubview(homeSectionView)
         
         dayLabel.snp.makeConstraints {
             $0.top.equalTo(safeAreaLayoutGuide).inset(margin(.height, 20))
@@ -44,6 +48,11 @@ final class HomeView: UIView {
         dateLabel.snp.makeConstraints {
             $0.top.equalTo(dayLabel.snp.bottom).inset(margin(.height, -4))
             $0.leading.equalTo(dayLabel)
+        }
+        
+        homeSectionView.snp.makeConstraints {
+            $0.top.equalTo(dateLabel.snp.bottom)
+            $0.leading.trailing.bottom.equalToSuperview()
         }
     }
 }

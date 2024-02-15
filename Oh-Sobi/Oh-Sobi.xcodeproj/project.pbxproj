@@ -15,6 +15,7 @@
 		C62DA29F2B7CFD5F00283F0A /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C62DA29B2B7CFD5F00283F0A /* Pretendard-Regular.otf */; };
 		C62DA2A22B7CFDA800283F0A /* UIFont + Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DA2A12B7CFDA800283F0A /* UIFont + Extenstion.swift */; };
 		C62DA2A42B7CFE4D00283F0A /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DA2A32B7CFE4D00283F0A /* UIView + Extension.swift */; };
+		C62E026F2B7E42BA00BE3715 /* HomeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62E026E2B7E42BA00BE3715 /* HomeSectionView.swift */; };
 		C6856AF62B7A062F00528493 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6856AF52B7A062F00528493 /* HomeView.swift */; };
 		C6856AF82B7A063500528493 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6856AF72B7A063500528493 /* HomeVM.swift */; };
 		C6CFAD1C2B7B981600D170D7 /* MonthlyConsumption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD1B2B7B981600D170D7 /* MonthlyConsumption.swift */; };
@@ -42,6 +43,7 @@
 		C62DA29B2B7CFD5F00283F0A /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Regular.otf"; path = "../../../../../../Pretendard-1.3.9/public/static/Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		C62DA2A12B7CFDA800283F0A /* UIFont + Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extenstion.swift"; sourceTree = "<group>"; };
 		C62DA2A32B7CFE4D00283F0A /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		C62E026E2B7E42BA00BE3715 /* HomeSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionView.swift; sourceTree = "<group>"; };
 		C6856AF52B7A062F00528493 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C6856AF72B7A063500528493 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		C6CFAD1B2B7B981600D170D7 /* MonthlyConsumption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyConsumption.swift; sourceTree = "<group>"; };
@@ -105,6 +107,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		C62E026D2B7E42AA00BE3715 /* HomeSectionView */ = {
+			isa = PBXGroup;
+			children = (
+				C62E026E2B7E42BA00BE3715 /* HomeSectionView.swift */,
+			);
+			path = HomeSectionView;
+			sourceTree = "<group>";
+		};
 		C6856AF42B7A060800528493 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				C6856AF52B7A062F00528493 /* HomeView.swift */,
+				C62E026D2B7E42AA00BE3715 /* HomeSectionView */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -328,6 +339,7 @@
 				C62DA2A42B7CFE4D00283F0A /* UIView + Extension.swift in Sources */,
 				C6D370B52B7A0297003B86C4 /* Container.swift in Sources */,
 				C6856AF62B7A062F00528493 /* HomeView.swift in Sources */,
+				C62E026F2B7E42BA00BE3715 /* HomeSectionView.swift in Sources */,
 				C62DA2A22B7CFDA800283F0A /* UIFont + Extenstion.swift in Sources */,
 				C6F6AB992B065128004473F4 /* SceneDelegate.swift in Sources */,
 				C6CFAD362B7BBFE400D170D7 /* Consumption.swift in Sources */,
