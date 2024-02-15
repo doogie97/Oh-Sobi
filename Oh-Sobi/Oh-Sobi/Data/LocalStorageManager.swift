@@ -9,6 +9,8 @@ import Foundation
 
 protocol LocalStorageManagerable {
     func getMontlyConsumption(year: Int, month: Int) -> MontlyConsumptionDTO?
+    func getDailyConsumption(year: Int, month: Int, day: Int) -> DailyConsumptionDTO?
+    func getWeeklyConsumption(year: Int, month: Int, startDay: Int) -> [DailyConsumptionDTO?]
 }
 
 //MARK: - 더미 데이터로 저장소 임시구현
@@ -28,6 +30,41 @@ final class LocalStorageManager: LocalStorageManagerable {
         let monthlyConsumption = getMontlyConsumption(year: year, month: month)
         return monthlyConsumption?.dailyConsumptionList.filter { $0.day == day }.first
     }
+    
+    func getWeeklyConsumption(year: Int, month: Int, startDay: Int) -> [DailyConsumptionDTO?] {
+        var weeklyConsumptionList = [DailyConsumptionDTO?]()
+        
+        guard let lastDayOfMonth = Date.lastDayOfMonth(year: year, month: month) else {
+            return []
+        }
+        let monthlyConsumptionsOfstartDay = getMontlyConsumption(year: year, month: month)
+        
+        if (startDay + 6) > lastDayOfMonth {
+            for day in startDay...lastDayOfMonth {
+                let dailyConsumption = monthlyConsumptionsOfstartDay?.dailyConsumptionList.filter { $0.day == day }.first
+                weeklyConsumptionList.append(dailyConsumption)
+            }
+            
+            let overDayCount = 7 - (lastDayOfMonth - startDay + 1)
+            var nextMonthlyConsumptions: MontlyConsumptionDTO? {
+                if month + 1 > 12 {
+                    return getMontlyConsumption(year: year + 1, month: 1)
+                } else {
+                    return getMontlyConsumption(year: year, month: month + 1)
+                }
+            }
+            
+            for day in 1...overDayCount {
+                let dailyConsumption = nextMonthlyConsumptions?.dailyConsumptionList.filter { $0.day == day }.first
+                weeklyConsumptionList.append(dailyConsumption)
+            }
+        } else {
+            for day in startDay...startDay + 6 {
+                let dailyConsumption = monthlyConsumptionsOfstartDay?.dailyConsumptionList.filter { $0.day == day }.first
+                weeklyConsumptionList.append(dailyConsumption)
+            }
+        }
+        return weeklyConsumptionList
     }
 }
 
