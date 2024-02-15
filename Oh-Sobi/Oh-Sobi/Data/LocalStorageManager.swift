@@ -72,8 +72,8 @@ final class LocalStorageManager: LocalStorageManagerable {
 extension LocalStorageManager {
     private func dummyMonthlyDTO(month: Int) -> MontlyConsumptionDTO {
         var dailyConsumptionList = [DailyConsumptionDTO]()
-        for i in 0..<daysInMonth(month: month) {
-            dailyConsumptionList.append(dailyConsumption(month: month, day: i + 1))
+        for i in 0..<dummyDaysInMonth(month: month) {
+            dailyConsumptionList.append(dummyDailyConsumption(month: month, day: i + 1))
         }
         return MontlyConsumptionDTO(year: 2024,
                                     month: month,
@@ -81,7 +81,7 @@ extension LocalStorageManager {
                                     dailyConsumptionList: dailyConsumptionList)
     }
     
-    private func daysInMonth(month: Int) -> Int {
+    private func dummyDaysInMonth(month: Int) -> Int {
         if month == 3 {
             return 14
         }
@@ -100,18 +100,18 @@ extension LocalStorageManager {
         return range.count
     }
     
-    private func dailyConsumption(month: Int, day: Int) -> DailyConsumptionDTO {
+    private func dummyDailyConsumption(month: Int, day: Int) -> DailyConsumptionDTO {
         let randomInt = Int.random(in: 0..<10)
         if randomInt == 0 {
             return DailyConsumptionDTO(day: day,
                                        consumptionList: [])
         } else if randomInt == 1 {
             return DailyConsumptionDTO(day: day,
-                                       consumptionList: [consumption(month: month, day: day, index: 1)])
+                                       consumptionList: [dummyConsumption(month: month, day: day, index: 1)])
         } else {
             var consumptionList = [ConsumptionDTO]()
             for i in 0...randomInt {
-                consumptionList.append(consumption(month: month, day: day, index: i + 1))
+                consumptionList.append(dummyConsumption(month: month, day: day, index: i + 1))
             }
             
             return DailyConsumptionDTO(day: day,
@@ -119,7 +119,7 @@ extension LocalStorageManager {
         }
     }
     
-    private func consumption(month: Int, day: Int, index: Int) -> ConsumptionDTO {
+    private func dummyConsumption(month: Int, day: Int, index: Int) -> ConsumptionDTO {
         let randomHour = Int.random(in: 0..<24)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy.M.d H"
