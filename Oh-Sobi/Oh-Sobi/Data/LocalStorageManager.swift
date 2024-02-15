@@ -22,6 +22,10 @@ final class LocalStorageManager: LocalStorageManagerable {
     
     func getMontlyConsumption(year: Int, month: Int) -> MontlyConsumptionDTO? {
         return montlyConsumptionDTO.filter { $0.year == year && $0.month == month }.first
+    func getDailyConsumption(year: Int, month: Int, day: Int) -> DailyConsumptionDTO? {
+        let monthlyConsumption = getMontlyConsumption(year: year, month: month)
+        return monthlyConsumption?.dailyConsumptionList.filter { $0.day == day }.first
+    }
     }
 }
 
