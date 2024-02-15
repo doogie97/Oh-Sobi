@@ -9,8 +9,25 @@
 /* Begin PBXBuildFile section */
 		71E7C14C2B7B426300E7BD1C /* CustomHalfModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7C14B2B7B426300E7BD1C /* CustomHalfModal.swift */; };
 		71E7C14F2B7B428C00E7BD1C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 71E7C14E2B7B428C00E7BD1C /* SnapKit */; };
+		C62DA29C2B7CFD5F00283F0A /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C62DA2982B7CFD5F00283F0A /* Pretendard-SemiBold.otf */; };
+		C62DA29D2B7CFD5F00283F0A /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C62DA2992B7CFD5F00283F0A /* Pretendard-Bold.otf */; };
+		C62DA29E2B7CFD5F00283F0A /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = C62DA29A2B7CFD5F00283F0A /* Pretendard-Black.otf */; };
+		C62DA29F2B7CFD5F00283F0A /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C62DA29B2B7CFD5F00283F0A /* Pretendard-Regular.otf */; };
+		C62DA2A22B7CFDA800283F0A /* UIFont + Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DA2A12B7CFDA800283F0A /* UIFont + Extenstion.swift */; };
+		C62DA2A42B7CFE4D00283F0A /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DA2A32B7CFE4D00283F0A /* UIView + Extension.swift */; };
+		C62E026F2B7E42BA00BE3715 /* HomeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62E026E2B7E42BA00BE3715 /* HomeSectionView.swift */; };
+		C62E02712B7E4AE400BE3715 /* Date + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62E02702B7E4AE400BE3715 /* Date + Extension.swift */; };
+		C62E02732B7E519000BE3715 /* GetWeeklyConsumptionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62E02722B7E519000BE3715 /* GetWeeklyConsumptionUseCase.swift */; };
 		C6856AF62B7A062F00528493 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6856AF52B7A062F00528493 /* HomeView.swift */; };
 		C6856AF82B7A063500528493 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6856AF72B7A063500528493 /* HomeVM.swift */; };
+		C6CFAD1C2B7B981600D170D7 /* MonthlyConsumption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD1B2B7B981600D170D7 /* MonthlyConsumption.swift */; };
+		C6CFAD1E2B7B9BA000D170D7 /* DailyConsumption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD1D2B7B9BA000D170D7 /* DailyConsumption.swift */; };
+		C6CFAD262B7B9D2600D170D7 /* MontlyConsumptionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD252B7B9D2600D170D7 /* MontlyConsumptionDTO.swift */; };
+		C6CFAD282B7B9D5800D170D7 /* DailyConsumptionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD272B7B9D5800D170D7 /* DailyConsumptionDTO.swift */; };
+		C6CFAD302B7BA6B700D170D7 /* LocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD2F2B7BA6B700D170D7 /* LocalStorageManager.swift */; };
+		C6CFAD322B7BB51700D170D7 /* ConsumptionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD312B7BB51700D170D7 /* ConsumptionDTO.swift */; };
+		C6CFAD342B7BBEEF00D170D7 /* GetMonthlyConsumptionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD332B7BBEEF00D170D7 /* GetMonthlyConsumptionUseCase.swift */; };
+		C6CFAD362B7BBFE400D170D7 /* Consumption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD352B7BBFE400D170D7 /* Consumption.swift */; };
 		C6D370B52B7A0297003B86C4 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D370B42B7A0297003B86C4 /* Container.swift */; };
 		C6F6AB972B065128004473F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F6AB962B065128004473F4 /* AppDelegate.swift */; };
 		C6F6AB992B065128004473F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F6AB982B065128004473F4 /* SceneDelegate.swift */; };
@@ -22,8 +39,25 @@
 
 /* Begin PBXFileReference section */
 		71E7C14B2B7B426300E7BD1C /* CustomHalfModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHalfModal.swift; sourceTree = "<group>"; };
+		C62DA2982B7CFD5F00283F0A /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-SemiBold.otf"; path = "../../../../../../Pretendard-1.3.9/public/static/Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		C62DA2992B7CFD5F00283F0A /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Bold.otf"; path = "../../../../../../Pretendard-1.3.9/public/static/Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		C62DA29A2B7CFD5F00283F0A /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Black.otf"; path = "../../../../../../Pretendard-1.3.9/public/static/Pretendard-Black.otf"; sourceTree = "<group>"; };
+		C62DA29B2B7CFD5F00283F0A /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Regular.otf"; path = "../../../../../../Pretendard-1.3.9/public/static/Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		C62DA2A12B7CFDA800283F0A /* UIFont + Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extenstion.swift"; sourceTree = "<group>"; };
+		C62DA2A32B7CFE4D00283F0A /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		C62E026E2B7E42BA00BE3715 /* HomeSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionView.swift; sourceTree = "<group>"; };
+		C62E02702B7E4AE400BE3715 /* Date + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Extension.swift"; sourceTree = "<group>"; };
+		C62E02722B7E519000BE3715 /* GetWeeklyConsumptionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWeeklyConsumptionUseCase.swift; sourceTree = "<group>"; };
 		C6856AF52B7A062F00528493 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C6856AF72B7A063500528493 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
+		C6CFAD1B2B7B981600D170D7 /* MonthlyConsumption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyConsumption.swift; sourceTree = "<group>"; };
+		C6CFAD1D2B7B9BA000D170D7 /* DailyConsumption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyConsumption.swift; sourceTree = "<group>"; };
+		C6CFAD252B7B9D2600D170D7 /* MontlyConsumptionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MontlyConsumptionDTO.swift; sourceTree = "<group>"; };
+		C6CFAD272B7B9D5800D170D7 /* DailyConsumptionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyConsumptionDTO.swift; sourceTree = "<group>"; };
+		C6CFAD2F2B7BA6B700D170D7 /* LocalStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageManager.swift; sourceTree = "<group>"; };
+		C6CFAD312B7BB51700D170D7 /* ConsumptionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumptionDTO.swift; sourceTree = "<group>"; };
+		C6CFAD332B7BBEEF00D170D7 /* GetMonthlyConsumptionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMonthlyConsumptionUseCase.swift; sourceTree = "<group>"; };
+		C6CFAD352B7BBFE400D170D7 /* Consumption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consumption.swift; sourceTree = "<group>"; };
 		C6D370B42B7A0297003B86C4 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		C6F6AB932B065128004473F4 /* Oh-Sobi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oh-Sobi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F6AB962B065128004473F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,8 +86,38 @@
 			isa = PBXGroup;
 			children = (
 				71E7C14B2B7B426300E7BD1C /* CustomHalfModal.swift */,
+				C62DA2A02B7CFD8400283F0A /* Extension */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		C62DA2972B7CFD2A00283F0A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C62DA29A2B7CFD5F00283F0A /* Pretendard-Black.otf */,
+				C62DA2992B7CFD5F00283F0A /* Pretendard-Bold.otf */,
+				C62DA29B2B7CFD5F00283F0A /* Pretendard-Regular.otf */,
+				C62DA2982B7CFD5F00283F0A /* Pretendard-SemiBold.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		C62DA2A02B7CFD8400283F0A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C62DA2A12B7CFDA800283F0A /* UIFont + Extenstion.swift */,
+				C62DA2A32B7CFE4D00283F0A /* UIView + Extension.swift */,
+				C62E02702B7E4AE400BE3715 /* Date + Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		C62E026D2B7E42AA00BE3715 /* HomeSectionView */ = {
+			isa = PBXGroup;
+			children = (
+				C62E026E2B7E42BA00BE3715 /* HomeSectionView.swift */,
+			);
+			path = HomeSectionView;
 			sourceTree = "<group>";
 		};
 		C6856AF42B7A060800528493 /* Home */ = {
@@ -70,8 +134,56 @@
 			isa = PBXGroup;
 			children = (
 				C6856AF52B7A062F00528493 /* HomeView.swift */,
+				C62E026D2B7E42AA00BE3715 /* HomeSectionView */,
 			);
 			path = HomeView;
+			sourceTree = "<group>";
+		};
+		C6CFAD182B7B97E300D170D7 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				C6CFAD192B7B97F700D170D7 /* UseCase */,
+				C6CFAD1A2B7B980200D170D7 /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		C6CFAD192B7B97F700D170D7 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				C6CFAD332B7BBEEF00D170D7 /* GetMonthlyConsumptionUseCase.swift */,
+				C62E02722B7E519000BE3715 /* GetWeeklyConsumptionUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		C6CFAD1A2B7B980200D170D7 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C6CFAD1B2B7B981600D170D7 /* MonthlyConsumption.swift */,
+				C6CFAD1D2B7B9BA000D170D7 /* DailyConsumption.swift */,
+				C6CFAD352B7BBFE400D170D7 /* Consumption.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		C6CFAD212B7B9C9900D170D7 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C6CFAD2F2B7BA6B700D170D7 /* LocalStorageManager.swift */,
+				C6CFAD242B7B9D1600D170D7 /* Models */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C6CFAD242B7B9D1600D170D7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C6CFAD252B7B9D2600D170D7 /* MontlyConsumptionDTO.swift */,
+				C6CFAD272B7B9D5800D170D7 /* DailyConsumptionDTO.swift */,
+				C6CFAD312B7BB51700D170D7 /* ConsumptionDTO.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		C6D370B32B7A0283003B86C4 /* Container */ = {
@@ -96,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				C6F6ABA22B065129004473F4 /* Assets.xcassets */,
+				C62DA2972B7CFD2A00283F0A /* Fonts */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -129,7 +242,9 @@
 			isa = PBXGroup;
 			children = (
 				C6D370B62B7A0407003B86C4 /* Application */,
+				C6CFAD182B7B97E300D170D7 /* Domain */,
 				C6D370B92B7A048C003B86C4 /* Presentation */,
+				C6CFAD212B7B9C9900D170D7 /* Data */,
 				71E7C14A2B7B425100E7BD1C /* Utils */,
 				C6D370B72B7A0428003B86C4 /* Resource */,
 				C6F6ABA82B065129004473F4 /* Info.plist */,
@@ -203,8 +318,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C62DA29C2B7CFD5F00283F0A /* Pretendard-SemiBold.otf in Resources */,
+				C62DA29F2B7CFD5F00283F0A /* Pretendard-Regular.otf in Resources */,
+				C62DA29D2B7CFD5F00283F0A /* Pretendard-Bold.otf in Resources */,
 				C6F6ABA62B065129004473F4 /* LaunchScreen.storyboard in Resources */,
 				C6F6ABA32B065129004473F4 /* Assets.xcassets in Resources */,
+				C62DA29E2B7CFD5F00283F0A /* Pretendard-Black.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,14 +334,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6CFAD1C2B7B981600D170D7 /* MonthlyConsumption.swift in Sources */,
+				C62E02732B7E519000BE3715 /* GetWeeklyConsumptionUseCase.swift in Sources */,
+				C6CFAD322B7BB51700D170D7 /* ConsumptionDTO.swift in Sources */,
 				C6F6AB9B2B065128004473F4 /* HomeVC.swift in Sources */,
+				C62E02712B7E4AE400BE3715 /* Date + Extension.swift in Sources */,
 				C6F6AB972B065128004473F4 /* AppDelegate.swift in Sources */,
 				C6856AF82B7A063500528493 /* HomeVM.swift in Sources */,
 				71E7C14C2B7B426300E7BD1C /* CustomHalfModal.swift in Sources */,
+				C6CFAD262B7B9D2600D170D7 /* MontlyConsumptionDTO.swift in Sources */,
+				C6CFAD1E2B7B9BA000D170D7 /* DailyConsumption.swift in Sources */,
+				C62DA2A42B7CFE4D00283F0A /* UIView + Extension.swift in Sources */,
 				C6D370B52B7A0297003B86C4 /* Container.swift in Sources */,
 				C6856AF62B7A062F00528493 /* HomeView.swift in Sources */,
+				C62E026F2B7E42BA00BE3715 /* HomeSectionView.swift in Sources */,
+				C62DA2A22B7CFDA800283F0A /* UIFont + Extenstion.swift in Sources */,
 				C6F6AB992B065128004473F4 /* SceneDelegate.swift in Sources */,
+				C6CFAD362B7BBFE400D170D7 /* Consumption.swift in Sources */,
+				C6CFAD302B7BA6B700D170D7 /* LocalStorageManager.swift in Sources */,
+				C6CFAD282B7B9D5800D170D7 /* DailyConsumptionDTO.swift in Sources */,
 				C6F6ABA12B065128004473F4 /* Oh_Sobi.xcdatamodeld in Sources */,
+				C6CFAD342B7BBEEF00D170D7 /* GetMonthlyConsumptionUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +424,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -349,7 +481,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

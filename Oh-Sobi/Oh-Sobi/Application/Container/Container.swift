@@ -9,11 +9,13 @@ protocol Containerable {
     func homeVC() -> HomeVC
 }
 
-struct Container: Containerable {
+final class Container: Containerable {
     static let shared: Containerable = Container()
     private init() {}
+    private let localStorageManager = LocalStorageManager()
     
     func homeVC() -> HomeVC {
-        return HomeVC(viewModel: HomeVM())
+        return HomeVC(viewModel: HomeVM(getMonthlyConsumptionUseCase: GetMonthlyConsumptionUseCase(localStorage: localStorageManager),
+                                        getWeeklyConsumptionUseCase: GetWeeklyConsumptionUseCase(localStorage: localStorageManager)))
     }
 }

@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import SnapKit
 
 class HomeVC: UIViewController {
-    private weak var viewModel: HomeVMable?
+    private let viewModel: HomeVMable
     private let homeView = HomeView()
     
-    init(viewModel: HomeVMable?) {
+    init(viewModel: HomeVMable) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -28,21 +29,8 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.homeView.setViewContents()
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
-            let view = UIView()
-            let innerView = UIView()
-            innerView.backgroundColor = .systemRed
-            view.addSubview(innerView)
-            innerView.snp.makeConstraints {
-                $0.height.equalTo(400)
-                $0.edges.equalToSuperview()
-            }
-            let customModal = CustomHalfModal()
-            customModal.contentsView = view
-            
-            self.present(customModal, animated: false)
-        }
+        self.homeView.setViewContents() //임시 호출
+        viewModel.getMonthlyConsumption()
     }
 }
 
