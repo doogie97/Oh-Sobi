@@ -32,7 +32,7 @@ final class HomeVM: HomeVMable {
         let weeklyConsumption = getWeeklyConsumptionUseCase.execute(year: todayYearMonthDay.year,
                                                                     month: todayYearMonthDay.month,
                                                                     startDay: todayYearMonthDay.day)
-        weeklyConsumption.forEach {
+        weeklyConsumption.weeklyConsumptionList.forEach {
             print($0?.day)
         }
     }
