@@ -125,10 +125,11 @@ extension LocalStorageManager {
         dateFormatter.dateFormat = "yyyy.M.d H"
         let dateString = "2024.\(month).\(day) \(randomHour)"
         let date = dateFormatter.date(from: dateString) ?? Date()
+        let amount = day % 2 == 0 ? 1000 : -1000
         return ConsumptionDTO(id: UUID(),
                               date: date,
                               title: "\(day)일의 \(index)번 상품 소비",
                               category: "테스트",
-                              amount: 1000 * day)
+                              amount: amount * day)
     }
 }
