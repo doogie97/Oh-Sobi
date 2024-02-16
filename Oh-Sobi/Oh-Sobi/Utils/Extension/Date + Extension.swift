@@ -30,4 +30,30 @@ extension Date {
                             month: components.month ?? 0,
                             day: components.day ?? 0)
     }
+    
+    enum Day: Int {
+        case SUN = 1
+        case MON
+        case TUE
+        case WED
+        case THU
+        case FRI
+        case SAT
+    }
+    
+    static func getWeekday(year: Int, month: Int, day: Int) -> Day? {
+        let calendar = Calendar.current
+        
+        var components = DateComponents()
+        components.year = year
+        components.month = month
+        components.day = day
+        
+        if let date = calendar.date(from: components) {
+            let weekdayInt = calendar.component(.weekday, from: date)
+            return Day(rawValue: weekdayInt) ?? nil
+        } else {
+            return nil
+        }
+    }
 }
