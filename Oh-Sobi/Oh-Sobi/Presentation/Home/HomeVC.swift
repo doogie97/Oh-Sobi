@@ -30,7 +30,7 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.homeView.setViewContents() //임시 호출
-        viewModel.getMonthlyConsumption()
+        viewModel.getInitialHomeInfo()
     }
 }
 

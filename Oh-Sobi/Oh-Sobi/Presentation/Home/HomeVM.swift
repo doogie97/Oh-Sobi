@@ -10,7 +10,7 @@ import Foundation
 protocol HomeVMable: HomeVMInput, HomeVMOutput {}
 
 protocol HomeVMInput {
-    func getMonthlyConsumption()
+    func getInitialHomeInfo()
 }
 
 protocol HomeVMOutput {}
@@ -35,5 +35,6 @@ final class HomeVM: HomeVMable {
         weeklyConsumption.weeklyConsumptionList.forEach {
             print($0?.day)
         }
+    func getInitialHomeInfo() {
     }
 }
