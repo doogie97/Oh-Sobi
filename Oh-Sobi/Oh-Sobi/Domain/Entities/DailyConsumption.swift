@@ -6,6 +6,8 @@
 //
 
 struct DailyConsumption {
+    let year: Int
+    let month: Int
     let day: Int
     let consumptionList: [Consumption]
 }

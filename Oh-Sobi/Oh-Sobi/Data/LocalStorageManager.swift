@@ -44,7 +44,9 @@ final class LocalStorageManager: LocalStorageManagerable {
                 if let dailyConsumption = monthlyConsumptionsOfstartDay?.dailyConsumptionList.filter({ $0.day == day }).first {
                     weeklyConsumptionList.append(dailyConsumption)
                 } else {
-                    weeklyConsumptionList.append(DailyConsumptionDTO(day: day,
+                    weeklyConsumptionList.append(DailyConsumptionDTO(year: year,
+                                                                     month: month,
+                                                                     day: day,
                                                                      consumptionList: []))
                 }
             }
@@ -62,7 +64,9 @@ final class LocalStorageManager: LocalStorageManagerable {
                 if let dailyConsumption = nextMonthlyConsumptions?.dailyConsumptionList.filter({ $0.day == day }).first {
                     weeklyConsumptionList.append(dailyConsumption)
                 } else {
-                    weeklyConsumptionList.append(DailyConsumptionDTO(day: day,
+                    weeklyConsumptionList.append(DailyConsumptionDTO(year: year,
+                                                                     month: month,
+                                                                     day: day,
                                                                      consumptionList: []))
                 }
             }
@@ -71,7 +75,9 @@ final class LocalStorageManager: LocalStorageManagerable {
                 if let dailyConsumption = monthlyConsumptionsOfstartDay?.dailyConsumptionList.filter({ $0.day == day }).first {
                     weeklyConsumptionList.append(dailyConsumption)
                 } else {
-                    weeklyConsumptionList.append(DailyConsumptionDTO(day: day,
+                    weeklyConsumptionList.append(DailyConsumptionDTO(year: year,
+                                                                     month: month,
+                                                                     day: day,
                                                                      consumptionList: []))
                 }
             }
@@ -85,7 +91,7 @@ extension LocalStorageManager {
     private func dummyMonthlyDTO(month: Int) -> MontlyConsumptionDTO {
         var dailyConsumptionList = [DailyConsumptionDTO]()
         for i in 0..<dummyDaysInMonth(month: month) {
-            dailyConsumptionList.append(dummyDailyConsumption(month: month, day: i + 1))
+            dailyConsumptionList.append(dummyDailyConsumption(year: 2024, month: month, day: i + 1))
         }
         return MontlyConsumptionDTO(year: 2024,
                                     month: month,
@@ -112,13 +118,17 @@ extension LocalStorageManager {
         return range.count
     }
     
-    private func dummyDailyConsumption(month: Int, day: Int) -> DailyConsumptionDTO {
+    private func dummyDailyConsumption(year: Int, month: Int, day: Int) -> DailyConsumptionDTO {
         let randomInt = Int.random(in: 0..<10)
         if randomInt == 0 {
-            return DailyConsumptionDTO(day: day,
+            return DailyConsumptionDTO(year: year,
+                                       month: month,
+                                       day: day,
                                        consumptionList: [])
         } else if randomInt == 1 {
-            return DailyConsumptionDTO(day: day,
+            return DailyConsumptionDTO(year: year,
+                                       month: month,
+                                       day: day,
                                        consumptionList: [dummyConsumption(month: month, day: day, index: 1)])
         } else {
             var consumptionList = [ConsumptionDTO]()
@@ -126,7 +136,9 @@ extension LocalStorageManager {
                 consumptionList.append(dummyConsumption(month: month, day: day, index: i + 1))
             }
             
-            return DailyConsumptionDTO(day: day,
+            return DailyConsumptionDTO(year: year,
+                                       month: month,
+                                       day: day,
                                        consumptionList: consumptionList)
         }
     }
