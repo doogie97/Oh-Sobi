@@ -15,21 +15,17 @@ struct GetWeeklyConsumptionUseCase {
     func execute(year: Int, month: Int, startDay: Int) -> WeeklyConsumption {
         let dto = localStorage.getWeeklyConsumption(year: year, month: month, startDay: startDay)
         let weeklyConsumtionList = dto.compactMap {
-            if let dailyConsumption = $0 {
-                let consumptionList = dailyConsumption.consumptionList.compactMap {
-                    return Consumption(id: $0.id,
-                                       date: $0.date,
-                                       title: $0.title,
-                                       category: $0.category,
-                                       amount: $0.amount)
-                }
-                return DailyConsumption(day: dailyConsumption.day,
-                                        consumptionList: consumptionList.sorted(by: {
-                    $0.date > $1.date
-                }))
-            } else {
-                return nil
+            let consumptionList = $0.consumptionList.compactMap {
+                return Consumption(id: $0.id,
+                                   date: $0.date,
+                                   title: $0.title,
+                                   category: $0.category,
+                                   amount: $0.amount)
             }
+            return DailyConsumption(day: $0.day,
+                                    consumptionList: consumptionList.sorted(by: {
+                $0.date > $1.date
+            }))
         }
         
         return WeeklyConsumption(weeklyConsumptionList: weeklyConsumtionList)
