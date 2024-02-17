@@ -66,23 +66,33 @@ final class OhsobiDateManager {
         var month = ymd.month
         var day = ymd.day
         
-        if weekDay != .SUN {
-            let weekStartDay = day - (weekDay.rawValue - 1)
-            
-            if weekStartDay > 0 { //일요일의 날짜가 0보다 클때
-                day = weekStartDay
-            } else { //일요일의 날짜가 1보다 작을 때
-                let lastMonth = month - 1
-                //지난 달이 0보다 클 때
-                if lastMonth > 0 {
-                    month = lastMonth
-                    day = (OhsobiDateManager.shared.lastDayOfMonth(year: year, month: lastMonth) ?? 0) + weekStartDay
-                //지난 달이 1보다 작을 때
+        let weekStartDay = day - (weekDay.rawValue - 1)
+        
+        if weekStartDay > 0 { //일요일의 날짜가 0보다 클때
+            let lastDay = lastDayOfMonth(year: year, month: month) ?? 0
+            if day > lastDay {
+                let nextMonth = month + 1
+                if nextMonth > 12 {
+                    year += 1
+                    month = 1
                 } else {
-                    year -= 1
-                    month = 12
-                    day = 31 + weekStartDay
+                    month += 1
                 }
+                day = weekStartDay - lastDay
+            } else {
+                day = weekStartDay
+            }
+        } else { //일요일의 날짜가 1보다 작을 때
+            let lastMonth = month - 1
+            //지난 달이 0보다 클 때
+            if lastMonth > 0 {
+                month = lastMonth
+                day = (OhsobiDateManager.shared.lastDayOfMonth(year: year, month: lastMonth) ?? 0) + weekStartDay
+                //지난 달이 1보다 작을 때
+            } else {
+                year -= 1
+                month = 12
+                day = 31 + weekStartDay
             }
         }
         
