@@ -34,7 +34,7 @@ final class LocalStorageManager: LocalStorageManagerable {
     func getWeeklyConsumption(year: Int, month: Int, startDay: Int) -> [DailyConsumptionDTO] {
         var weeklyConsumptionList = [DailyConsumptionDTO]()
         
-        guard let lastDayOfMonth = Date.lastDayOfMonth(year: year, month: month) else {
+        guard let lastDayOfMonth = OhsobiDateManager.shared.lastDayOfMonth(year: year, month: month) else {
             return []
         }
         let monthlyConsumptionsOfstartDay = getMontlyConsumption(year: year, month: month)

@@ -41,7 +41,7 @@ final class HomeVM: HomeVMable {
     }
     
     private func getWeeklyConsumption(year: Int, month: Int, starDay: Int) -> WeeklyConsumption? {
-        guard let startDayWeekDay = Date.getWeekday(year: year, month: month, day: starDay) else {
+        guard let startDayWeekDay = OhsobiDateManager.shared.getWeekday(year: year, month: month, day: starDay) else {
             return nil
         }
         
@@ -62,12 +62,12 @@ final class HomeVM: HomeVMable {
                 //지난 달이 0보다 클 때
                 if lastMonth > 0 {
                     newMonth = lastMonth
-                    newStartDay = Date.lastDayOfMonth(year: year, month: lastMonth) ?? 0
+                    newStartDay = OhsobiDateManager.shared.lastDayOfMonth(year: year, month: lastMonth) ?? 0
                 //지난 달이 1보다 작을 때
                 } else {
                     newYear -= 1
                     newMonth = 12
-                    newStartDay = Date.lastDayOfMonth(year: newYear, month: newMonth) ?? 0
+                    newStartDay = OhsobiDateManager.shared.lastDayOfMonth(year: newYear, month: newMonth) ?? 0
                 }
             }
         }
