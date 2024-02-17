@@ -54,4 +54,38 @@ final class OhsobiDateManager {
             return nil
         }
     }
+    
+    /// 한 주의 일요일 YMD
+    ///
+    /// - Parameters:
+    ///   - ymd : 전달 받은 날짜
+    /// - Returns: 전달 받은 ymd 주의 일요일 ymd 반환
+    func getWeekSundayYMD(ymd: YearMonthDay) -> YearMonthDay {
+        let weekDay = OhsobiDateManager.shared.getWeekday(ymd: ymd) ?? .SUN
+        var year = ymd.year
+        var month = ymd.month
+        var day = ymd.day
+        
+        if weekDay != .SUN {
+            let weekStartDay = day - (weekDay.rawValue - 1)
+            
+            if weekStartDay > 0 { //일요일의 날짜가 0보다 클때
+                day = weekStartDay
+            } else { //일요일의 날짜가 1보다 작을 때
+                let lastMonth = month - 1
+                //지난 달이 0보다 클 때
+                if lastMonth > 0 {
+                    month = lastMonth
+                    day = (OhsobiDateManager.shared.lastDayOfMonth(year: year, month: lastMonth) ?? 0) + weekStartDay
+                //지난 달이 1보다 작을 때
+                } else {
+                    year -= 1
+                    month = 12
+                    day = 31 + weekStartDay
+                }
+            }
+        }
+        
+        return YearMonthDay(year: year, month: month, day: day)
+    }
 }
