@@ -10,6 +10,9 @@ import Foundation
 final class OhsobiDateManager {
     static let shared = OhsobiDateManager()
     private init() {}
+    
+    let dateFormatter = DateFormatter()
+    
     func lastDayOfMonth(year: Int, month: Int) -> Int? {
         let calendar = Calendar.current
         guard let range = calendar.range(of: .day, in: .month, for: calendar.date(from: DateComponents(year: year, month: month, day: 1))!) else {
@@ -18,8 +21,12 @@ final class OhsobiDateManager {
         return range.count
     }
     
-    func stringToDate(year: Int, month: Int, day: Int) -> Date {
-        return Date()
+    func ymdToDate(ymd: YearMonthDay) -> Date {
+        dateFormatter.dateFormat = "yyyy.M.d"
+        let dateString = "\(ymd.year).\(ymd.month).\(ymd.day)"
+        let date = dateFormatter.date(from: dateString) ?? Date()
+        
+        return date
     }
     
     enum Day: Int {
@@ -32,13 +39,13 @@ final class OhsobiDateManager {
         case SAT
     }
     
-    func getWeekday(year: Int, month: Int, day: Int) -> Day? {
+    func getWeekday(ymd: YearMonthDay) -> Day? {
         let calendar = Calendar.current
         
         var components = DateComponents()
-        components.year = year
-        components.month = month
-        components.day = day
+        components.year = ymd.year
+        components.month = ymd.month
+        components.day = ymd.day
         
         if let date = calendar.date(from: components) {
             let weekdayInt = calendar.component(.weekday, from: date)

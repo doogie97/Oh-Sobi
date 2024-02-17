@@ -8,11 +8,7 @@
 import Foundation
 
 extension Date {
-    struct YearMonthDay {
-        let year: Int
-        let month: Int
-        let day: Int
-    }
+
     
     func yearMonthDay() -> YearMonthDay {
         let calendar = Calendar.current
