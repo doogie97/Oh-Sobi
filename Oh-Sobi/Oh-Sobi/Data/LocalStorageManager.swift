@@ -46,6 +46,7 @@ final class LocalStorageManager: LocalStorageManagerable {
         }
         let monthlyConsumptionsOfstartDay = getMontlyConsumption(year: sunDayYMD.year, month: sunDayYMD.month)
         
+        //시작일의 토요일이 월의 마지막날을 넘었을 경우
         if (sunDayYMD.day + 6) > lastDayOfMonth {
             for day in sunDayYMD.day...lastDayOfMonth {
                 if let dailyConsumption = monthlyConsumptionsOfstartDay?.dailyConsumptionList.filter({ $0.day == day }).first {
@@ -59,20 +60,22 @@ final class LocalStorageManager: LocalStorageManagerable {
             }
             
             let overDayCount = 7 - (lastDayOfMonth - sunDayYMD.day + 1)
-            var nextMonthlyConsumptions: MontlyConsumptionDTO? {
-                if sunDayYMD.month + 1 > 12 {
-                    return getMontlyConsumption(year: sunDayYMD.year + 1, month: 1)
-                } else {
-                    return getMontlyConsumption(year: sunDayYMD.year, month: sunDayYMD.month + 1)
-                }
+            var newYear = sunDayYMD.year
+            var newMonth = sunDayYMD.month
+            if sunDayYMD.month + 1 > 12 {
+                newYear += 1
+                newMonth = 1
+            } else {
+                newMonth += 1
             }
+            let nextMonthlyConsumption = getMontlyConsumption(year: newYear, month: newMonth)
             
             for day in 1...overDayCount {
-                if let dailyConsumption = nextMonthlyConsumptions?.dailyConsumptionList.filter({ $0.day == day }).first {
+                if let dailyConsumption = nextMonthlyConsumption?.dailyConsumptionList.filter({ $0.day == day }).first {
                     weeklyConsumptionList.append(dailyConsumption)
                 } else {
-                    weeklyConsumptionList.append(DailyConsumptionDTO(year: sunDayYMD.year,
-                                                                     month: sunDayYMD.month,
+                    weeklyConsumptionList.append(DailyConsumptionDTO(year: newYear,
+                                                                     month: newMonth,
                                                                      day: day,
                                                                      consumptionList: []))
                 }
