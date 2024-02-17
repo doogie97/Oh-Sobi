@@ -20,11 +20,11 @@ protocol LocalStorageManagerable {
 
 //MARK: - 더미 데이터로 저장소 임시구현
 final class LocalStorageManager: LocalStorageManagerable {
-    private var montlyConsumptionListDTO = [MontlyConsumptionDTO]()
+    private var montlyConsumptionListDTO = Set<MontlyConsumptionDTO>()
     init() {
-        montlyConsumptionListDTO.append(dummyMonthlyDTO(month: 1))
-        montlyConsumptionListDTO.append(dummyMonthlyDTO(month: 2))
-        montlyConsumptionListDTO.append(dummyMonthlyDTO(month: 3))
+        montlyConsumptionListDTO.insert(dummyMonthlyDTO(month: 1))
+        montlyConsumptionListDTO.insert(dummyMonthlyDTO(month: 2))
+        montlyConsumptionListDTO.insert(dummyMonthlyDTO(month: 3))
     }
     
     func getMontlyConsumption(year: Int, month: Int) -> MontlyConsumptionDTO? {
@@ -55,6 +55,9 @@ final class LocalStorageManager: LocalStorageManagerable {
                     weeklyConsumptionList.append(DailyConsumptionDTO(year: sunDayYMD.year,
                                                                      month: sunDayYMD.month,
                                                                      day: day,
+                                                                     date: OhsobiDateManager.shared.ymdToDate(ymd: YearMonthDay(year: sunDayYMD.year,
+                                                                                                                                month: sunDayYMD.month,
+                                                                                                                                day: day)),
                                                                      consumptionList: []))
                 }
             }
@@ -77,6 +80,9 @@ final class LocalStorageManager: LocalStorageManagerable {
                     weeklyConsumptionList.append(DailyConsumptionDTO(year: newYear,
                                                                      month: newMonth,
                                                                      day: day,
+                                                                     date: OhsobiDateManager.shared.ymdToDate(ymd: YearMonthDay(year: newYear,
+                                                                                                                                month: newMonth,
+                                                                                                                                day: day)),
                                                                      consumptionList: []))
                 }
             }
@@ -88,6 +94,9 @@ final class LocalStorageManager: LocalStorageManagerable {
                     weeklyConsumptionList.append(DailyConsumptionDTO(year: sunDayYMD.year,
                                                                      month: sunDayYMD.month,
                                                                      day: day,
+                                                                     date: OhsobiDateManager.shared.ymdToDate(ymd: YearMonthDay(year: sunDayYMD.year,
+                                                                                                                                month: sunDayYMD.month,
+                                                                                                                                day: day)),
                                                                      consumptionList: []))
                 }
             }
@@ -106,7 +115,7 @@ extension LocalStorageManager {
         return MontlyConsumptionDTO(year: 2024,
                                     month: month,
                                     limitAmount: 10000,
-                                    dailyConsumptionList: dailyConsumptionList)
+                                    dailyConsumptionList: Set(dailyConsumptionList))
     }
     
     private func dummyDaysInMonth(month: Int) -> Int {
@@ -133,12 +142,18 @@ extension LocalStorageManager {
         if randomInt == 0 {
             return DailyConsumptionDTO(year: year,
                                        month: month,
-                                       day: day,
+                                       day: day, 
+                                       date: OhsobiDateManager.shared.ymdToDate(ymd: YearMonthDay(year: year,
+                                                                                                  month: month,
+                                                                                                  day: day)),
                                        consumptionList: [])
         } else if randomInt == 1 {
             return DailyConsumptionDTO(year: year,
                                        month: month,
-                                       day: day,
+                                       day: day, 
+                                       date: OhsobiDateManager.shared.ymdToDate(ymd: YearMonthDay(year: year,
+                                                                                                  month: month,
+                                                                                                  day: day)),
                                        consumptionList: [dummyConsumption(month: month, day: day, index: 1)])
         } else {
             var consumptionList = [ConsumptionDTO]()
@@ -148,7 +163,10 @@ extension LocalStorageManager {
             
             return DailyConsumptionDTO(year: year,
                                        month: month,
-                                       day: day,
+                                       day: day, 
+                                       date: OhsobiDateManager.shared.ymdToDate(ymd: YearMonthDay(year: year,
+                                                                                                  month: month,
+                                                                                                  day: day)),
                                        consumptionList: Set(consumptionList))
         }
     }

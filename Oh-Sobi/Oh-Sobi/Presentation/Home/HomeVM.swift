@@ -34,7 +34,7 @@ final class HomeVM: HomeVMable {
         let monthlyConsumption = getMonthlyConsumptionUseCase.execute(year: weeklySectionDateInfo.year,
                                                                       month: weeklySectionDateInfo.month)
         let weeklyConsumptionList = [WeeklyConsumption]()
-        let thisWeekInfo = getWeeklyConsumptionUseCase.execute(ymd: YearMonthDay(year: 2024, month: 1, day: 1))
+        let thisWeekInfo = getWeeklyConsumptionUseCase.execute(ymd: YearMonthDay(year: 2021, month: 12, day: 31))
         
     }
     

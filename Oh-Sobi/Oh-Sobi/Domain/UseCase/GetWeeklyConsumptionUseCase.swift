@@ -21,13 +21,15 @@ struct GetWeeklyConsumptionUseCase {
                                    title: $0.title,
                                    category: $0.category,
                                    amount: $0.amount)
-            }
+            }.sorted(by: {
+                return $0.date < $1.date
+            })
+            
             return DailyConsumption(year: $0.year,
                                     month: $0.month,
-                                    day: $0.day,
-                                    consumptionList: consumptionList.sorted(by: {
-                $0.date > $1.date
-            }))
+                                    day: $0.day, 
+                                    date: $0.date,
+                                    consumptionList: consumptionList)
         }
         
         return WeeklyConsumption(weeklyConsumptionList: weeklyConsumtionList)

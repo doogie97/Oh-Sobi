@@ -20,13 +20,16 @@ struct GetMonthlyConsumptionUseCase {
                                   dailyConsumptionList: dailyConsumptionList(dto: dto?.dailyConsumptionList))
     }
     
-    private func dailyConsumptionList(dto: [DailyConsumptionDTO]?) -> [DailyConsumption] {
+    private func dailyConsumptionList(dto: Set<DailyConsumptionDTO>?) -> [DailyConsumption] {
         return (dto ?? []).compactMap {
             return DailyConsumption(year: $0.year,
                                     month: $0.month,
-                                    day: $0.day,
+                                    day: $0.day, 
+                                    date: $0.date,
                                     consumptionList: consumptionList(dto: $0.consumptionList))
-        }
+        }.sorted(by: {
+            $0.date < $1.date
+        })
     }
     
     private func consumptionList(dto: Set<ConsumptionDTO>) -> [Consumption] {
@@ -37,7 +40,7 @@ struct GetMonthlyConsumptionUseCase {
                                category: $0.category,
                                amount: $0.amount)
         }.sorted(by: {
-            $0.date > $1.date
+            $0.date < $1.date
         })
     }
 }
