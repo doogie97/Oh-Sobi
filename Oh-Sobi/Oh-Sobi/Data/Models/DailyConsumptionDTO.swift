@@ -11,5 +11,5 @@ struct DailyConsumptionDTO { //일단은 DTO라고 했으나 추후 로컬 저�
     let year: Int
     let month: Int
     let day: Int
-    let consumptionList: [ConsumptionDTO]
+    let consumptionList: Set<ConsumptionDTO>
 }

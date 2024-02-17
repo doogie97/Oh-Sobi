@@ -146,7 +146,7 @@ extension LocalStorageManager {
             return DailyConsumptionDTO(year: year,
                                        month: month,
                                        day: day,
-                                       consumptionList: consumptionList)
+                                       consumptionList: Set(consumptionList))
         }
     }
     

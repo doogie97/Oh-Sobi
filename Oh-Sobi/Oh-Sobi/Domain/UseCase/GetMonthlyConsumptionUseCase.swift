@@ -29,13 +29,15 @@ struct GetMonthlyConsumptionUseCase {
         }
     }
     
-    private func consumptionList(dto: [ConsumptionDTO]) -> [Consumption] {
+    private func consumptionList(dto: Set<ConsumptionDTO>) -> [Consumption] {
         return dto.compactMap {
             return Consumption(id: $0.id,
                                date: $0.date,
                                title: $0.title,
                                category: $0.category,
                                amount: $0.amount)
-        }
+        }.sorted(by: {
+            $0.date > $1.date
+        })
     }
 }
