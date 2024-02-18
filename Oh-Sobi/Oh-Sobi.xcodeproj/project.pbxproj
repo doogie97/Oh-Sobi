@@ -15,7 +15,7 @@
 		C62DA29F2B7CFD5F00283F0A /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C62DA29B2B7CFD5F00283F0A /* Pretendard-Regular.otf */; };
 		C62DA2A22B7CFDA800283F0A /* UIFont + Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DA2A12B7CFDA800283F0A /* UIFont + Extenstion.swift */; };
 		C62DA2A42B7CFE4D00283F0A /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DA2A32B7CFE4D00283F0A /* UIView + Extension.swift */; };
-		C62E026F2B7E42BA00BE3715 /* WeeklySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62E026E2B7E42BA00BE3715 /* WeeklySectionView.swift */; };
+		C62E026F2B7E42BA00BE3715 /* HomeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62E026E2B7E42BA00BE3715 /* HomeSectionView.swift */; };
 		C62E02712B7E4AE400BE3715 /* Date + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62E02702B7E4AE400BE3715 /* Date + Extension.swift */; };
 		C62E02732B7E519000BE3715 /* GetWeeklyConsumptionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62E02722B7E519000BE3715 /* GetWeeklyConsumptionUseCase.swift */; };
 		C67107422B7F867E00DFAA8D /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = C67107412B7F867E00DFAA8D /* RxCocoa */; };
@@ -25,6 +25,7 @@
 		C671074A2B80C5B900DFAA8D /* YearMonthDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67107492B80C5B900DFAA8D /* YearMonthDay.swift */; };
 		C6856AF62B7A062F00528493 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6856AF52B7A062F00528493 /* HomeView.swift */; };
 		C6856AF82B7A063500528493 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6856AF72B7A063500528493 /* HomeVM.swift */; };
+		C6AFE70E2B81AE580021B510 /* WeeklySectionCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AFE70D2B81AE580021B510 /* WeeklySectionCVCell.swift */; };
 		C6CFAD1C2B7B981600D170D7 /* MonthlyConsumption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD1B2B7B981600D170D7 /* MonthlyConsumption.swift */; };
 		C6CFAD1E2B7B9BA000D170D7 /* DailyConsumption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD1D2B7B9BA000D170D7 /* DailyConsumption.swift */; };
 		C6CFAD262B7B9D2600D170D7 /* MontlyConsumptionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFAD252B7B9D2600D170D7 /* MontlyConsumptionDTO.swift */; };
@@ -50,7 +51,7 @@
 		C62DA29B2B7CFD5F00283F0A /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Regular.otf"; path = "../../../../../../Pretendard-1.3.9/public/static/Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		C62DA2A12B7CFDA800283F0A /* UIFont + Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extenstion.swift"; sourceTree = "<group>"; };
 		C62DA2A32B7CFE4D00283F0A /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
-		C62E026E2B7E42BA00BE3715 /* WeeklySectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklySectionView.swift; sourceTree = "<group>"; };
+		C62E026E2B7E42BA00BE3715 /* HomeSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionView.swift; sourceTree = "<group>"; };
 		C62E02702B7E4AE400BE3715 /* Date + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Extension.swift"; sourceTree = "<group>"; };
 		C62E02722B7E519000BE3715 /* GetWeeklyConsumptionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWeeklyConsumptionUseCase.swift; sourceTree = "<group>"; };
 		C67107452B7F872C00DFAA8D /* WeeklyConsumption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyConsumption.swift; sourceTree = "<group>"; };
@@ -58,6 +59,7 @@
 		C67107492B80C5B900DFAA8D /* YearMonthDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearMonthDay.swift; sourceTree = "<group>"; };
 		C6856AF52B7A062F00528493 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C6856AF72B7A063500528493 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
+		C6AFE70D2B81AE580021B510 /* WeeklySectionCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklySectionCVCell.swift; sourceTree = "<group>"; };
 		C6CFAD1B2B7B981600D170D7 /* MonthlyConsumption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyConsumption.swift; sourceTree = "<group>"; };
 		C6CFAD1D2B7B9BA000D170D7 /* DailyConsumption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyConsumption.swift; sourceTree = "<group>"; };
 		C6CFAD252B7B9D2600D170D7 /* MontlyConsumptionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MontlyConsumptionDTO.swift; sourceTree = "<group>"; };
@@ -126,7 +128,8 @@
 		C62E026D2B7E42AA00BE3715 /* HomeSectionView */ = {
 			isa = PBXGroup;
 			children = (
-				C62E026E2B7E42BA00BE3715 /* WeeklySectionView.swift */,
+				C62E026E2B7E42BA00BE3715 /* HomeSectionView.swift */,
+				C6AFE70D2B81AE580021B510 /* WeeklySectionCVCell.swift */,
 			);
 			path = HomeSectionView;
 			sourceTree = "<group>";
@@ -365,7 +368,8 @@
 				C6D370B52B7A0297003B86C4 /* Container.swift in Sources */,
 				C6856AF62B7A062F00528493 /* HomeView.swift in Sources */,
 				C67107482B80C2C100DFAA8D /* OhsobiDateManager.swift in Sources */,
-				C62E026F2B7E42BA00BE3715 /* WeeklySectionView.swift in Sources */,
+				C62E026F2B7E42BA00BE3715 /* HomeSectionView.swift in Sources */,
+				C6AFE70E2B81AE580021B510 /* WeeklySectionCVCell.swift in Sources */,
 				C62DA2A22B7CFDA800283F0A /* UIFont + Extenstion.swift in Sources */,
 				C6F6AB992B065128004473F4 /* SceneDelegate.swift in Sources */,
 				C6CFAD362B7BBFE400D170D7 /* Consumption.swift in Sources */,
