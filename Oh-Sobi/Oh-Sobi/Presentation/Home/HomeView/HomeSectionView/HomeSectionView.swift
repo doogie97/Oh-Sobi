@@ -29,7 +29,7 @@ final class HomeSectionView: UIView {
 extension HomeSectionView: UICollectionViewDataSource, UICollectionViewDelegate {
     enum SectionCase: Int, CaseIterable {
         case weeklyConsumption = 0
-//        case consumptionState
+        case consumptionState
 //        case consumptionList
     }
     
@@ -44,6 +44,8 @@ extension HomeSectionView: UICollectionViewDataSource, UICollectionViewDelegate 
         
         switch section {
         case .weeklyConsumption:
+            return 1
+        case .consumptionState:
             return 1
         }
     }
@@ -60,6 +62,12 @@ extension HomeSectionView: UICollectionViewDataSource, UICollectionViewDelegate 
             }
             cell.setCellContents()
             return cell
+        case .consumptionState:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(ConsumptionStateCVCell.self)", for: indexPath) as? ConsumptionStateCVCell else {
+                return UICollectionViewCell()
+            }
+            cell.setCellContents()
+            return cell
         }
     }
 }
@@ -72,6 +80,7 @@ extension HomeSectionView {
         collectionView.delegate = self
         
         collectionView.register(WeeklySectionCVCell.self, forCellWithReuseIdentifier: "\(WeeklySectionCVCell.self)")
+        collectionView.register(ConsumptionStateCVCell.self, forCellWithReuseIdentifier: "\(ConsumptionStateCVCell.self)")
         
         return collectionView
     }
@@ -85,20 +94,39 @@ extension HomeSectionView {
             switch section {
             case .weeklyConsumption:
                 return self?.weeklySectionLayout()
+            case .consumptionState:
+                return self?.consumptionStateSectionLayout()
             }
         }
     }
     
     private func weeklySectionLayout() -> NSCollectionLayoutSection {
-        let size = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(0.37))
+        let ratio = 132.0 / 361.0
+        let size = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(ratio))
         let item = NSCollectionLayoutItem(layoutSize: size)
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                               heightDimension: .fractionalWidth(0.37))
+                                               heightDimension: .fractionalWidth(ratio))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = .init(top: margin(.height, 16),
+        section.contentInsets = .init(top: margin(.height, 24),
                                       leading: margin(.width, 16),
-                                      bottom: margin(.height, 16),
+                                      bottom: 0,
+                                      trailing: margin(.width, 16))
+        
+        return section
+    }
+    
+    private func consumptionStateSectionLayout() -> NSCollectionLayoutSection {
+        let ratio = 140.0 / 361.0
+        let size = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(ratio))
+        let item = NSCollectionLayoutItem(layoutSize: size)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                               heightDimension: .fractionalWidth(ratio))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = .init(top: margin(.height, 24),
+                                      leading: margin(.width, 16),
+                                      bottom: 0,
                                       trailing: margin(.width, 16))
         
         return section
