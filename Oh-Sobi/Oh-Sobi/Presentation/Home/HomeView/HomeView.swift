@@ -12,10 +12,18 @@ final class HomeView: UIView {
     private lazy var dayLabel = pretendardLabel(family: .Bold, size: 18)
     private lazy var dateLabel = pretendardLabel(family: .Regular, size: 14)
     
-    private lazy var homeSectionView = HomeSectionView()
+    private lazy var scrollView = {
+        let scrollView = UIScrollView()
+        
+        return scrollView
+    }()
+    
+    private lazy var contentsView = UIView()
+    
+    private lazy var weeklySectionView = WeeklySectionView()
     
     func setViewContents() {
-        homeSectionView.setViewContents()
+        weeklySectionView.setViewContents()
         setDateLabel()
         setLayout()
     }
@@ -38,7 +46,9 @@ final class HomeView: UIView {
     private func setLayout() {
         self.addSubview(dayLabel)
         self.addSubview(dateLabel)
-        self.addSubview(homeSectionView)
+        self.addSubview(scrollView)
+        scrollView.addSubview(contentsView)
+        contentsView.addSubview(weeklySectionView)
         
         dayLabel.snp.makeConstraints {
             $0.top.equalTo(safeAreaLayoutGuide).inset(margin(.height, 20))
@@ -50,9 +60,20 @@ final class HomeView: UIView {
             $0.leading.equalTo(dayLabel)
         }
         
-        homeSectionView.snp.makeConstraints {
+        scrollView.snp.makeConstraints {
             $0.top.equalTo(dateLabel.snp.bottom)
             $0.leading.trailing.bottom.equalToSuperview()
+        }
+        
+        contentsView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+            $0.width.equalToSuperview()
+        }
+        
+        weeklySectionView.snp.makeConstraints {
+            $0.top.equalTo(dateLabel.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview()
         }
     }
 }
