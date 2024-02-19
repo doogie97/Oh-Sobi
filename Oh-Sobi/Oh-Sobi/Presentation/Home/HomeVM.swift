@@ -31,16 +31,13 @@ final class HomeVM: HomeVMable {
     }
     
     func getInitialHomeInfo() {
-        let monthlyConsumption = getMonthlyConsumptionUseCase.execute(year: weeklySectionDateInfo.year,
-                                                                      month: weeklySectionDateInfo.month)
-        let weeklyConsumptionList = [WeeklyConsumption]()
-        let thisWeekInfo = getWeeklyConsumptionUseCase.execute(ymd: YearMonthDay(year: 2021, month: 12, day: 31))
-        
+        let weeklyConsumption = getWeeklyConsumptionUseCase.execute(ymd: Date().yearMonthDay())
+        setViewContents.accept(ViewContents(weeklyConsumption: weeklyConsumption))
     }
     
     //MARK: - Output
     struct ViewContents {
-        
+        let weeklyConsumption: WeeklyConsumption
     }
     let setViewContents = PublishRelay<ViewContents>()
 }

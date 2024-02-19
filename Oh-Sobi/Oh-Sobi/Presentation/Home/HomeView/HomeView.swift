@@ -14,8 +14,8 @@ final class HomeView: UIView {
     
     private lazy var homeSectionView = HomeSectionView()
     
-    func setViewContents() {
-        homeSectionView.setViewContents()
+    func setViewContents(viewContents: HomeVM.ViewContents) {
+        homeSectionView.setViewContents(viewContents: viewContents)
         setDateLabel()
         setLayout()
     }

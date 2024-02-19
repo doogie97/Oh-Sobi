@@ -9,11 +9,20 @@ import UIKit
 import SnapKit
 
 final class HomeSectionView: UIView {
-    private var dailyConsumptionList = ["1", "2", "3", "4", "1", "2", "3", "4", "1", "2", "3", "4"]
+    private var dailyConsumptionList = [Consumption]()
     private lazy var sectionCollectionView = UICollectionView(frame: .zero,
                                                               collectionViewLayout: UICollectionViewLayout())
     
-    func setViewContents() {
+    func setViewContents(viewContents: HomeVM.ViewContents) {
+        viewContents.weeklyConsumption.weeklyConsumptionList.forEach {
+            if let consumption = $0 {
+                let consumptionDate =  consumption.date.yearMonthDay()
+                let todayDate = Date().yearMonthDay()
+                if consumptionDate.year == todayDate.year && consumptionDate.month == todayDate.month && consumptionDate.day == todayDate.day {
+                    self.dailyConsumptionList = consumption.consumptionList
+                }
+            }
+        }
         sectionCollectionView = createSectionCollectionView()
         setLayout()
     }

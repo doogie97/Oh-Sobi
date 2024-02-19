@@ -6,11 +6,12 @@
 //
 
 import UIKit
-import SnapKit
+import RxSwift
 
 class HomeVC: UIViewController {
     private let viewModel: HomeVMable
     private let homeView = HomeView()
+    private let disposeBag = DisposeBag()
     
     init(viewModel: HomeVMable) {
         self.viewModel = viewModel
@@ -29,8 +30,16 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.homeView.setViewContents() //임시 호출
+        bindViewModel()
         viewModel.getInitialHomeInfo()
+    }
+    
+    private func bindViewModel() {
+        viewModel.setViewContents.withUnretained(self)
+            .subscribe(onNext: { owner, viewContents in
+                owner.homeView.setViewContents(viewContents: viewContents)
+            })
+            .disposed(by: disposeBag)
     }
 }
 
