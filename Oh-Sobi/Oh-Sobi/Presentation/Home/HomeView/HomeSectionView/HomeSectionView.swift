@@ -87,6 +87,24 @@ extension HomeSectionView: UICollectionViewDataSource, UICollectionViewDelegate 
             return cell
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let section = SectionCase(rawValue: indexPath.section) else {
+            return UICollectionReusableView()
+        }
+        
+        switch section {
+        case .consumptionList:
+            guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "\(HomeSectionHeaderView.self)", for: indexPath) as? HomeSectionHeaderView else {
+                return UICollectionReusableView()
+            }
+            header.setViewContents(title: "오늘의 소비")
+            
+            return header
+        case .weeklyConsumption, .consumptionState, .monthlyInfo:
+            return UICollectionReusableView()
+        }
+    }
 }
 
 extension HomeSectionView {
@@ -100,6 +118,10 @@ extension HomeSectionView {
         collectionView.register(ConsumptionStateCVCell.self, forCellWithReuseIdentifier: "\(ConsumptionStateCVCell.self)")
         collectionView.register(MonthlyInfoSectionCVCell.self, forCellWithReuseIdentifier: "\(MonthlyInfoSectionCVCell.self)")
         collectionView.register(HomeConsumptionListCVCell.self, forCellWithReuseIdentifier: "\(HomeConsumptionListCVCell.self)")
+        
+        collectionView.register(HomeSectionHeaderView.self,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: "\(HomeSectionHeaderView.self)")
         
         return collectionView
     }
@@ -190,7 +212,12 @@ extension HomeSectionView {
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
                                                        subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = .init(top: margin(.height, 24),
+        let sectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(margin(.height, 36) + 20))
+        section.boundarySupplementaryItems = [.init(layoutSize: sectionHeaderSize,
+                                              elementKind: UICollectionView.elementKindSectionHeader,
+                                              alignment: .topLeading)]
+        
+        section.contentInsets = .init(top: 0,
                                       leading: margin(.width, 24),
                                       bottom: 0,
                                       trailing: margin(.width, 24))
