@@ -27,6 +27,7 @@
 		C6856AF82B7A063500528493 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6856AF72B7A063500528493 /* HomeVM.swift */; };
 		C6AD89E12B837E940054F704 /* HomeConsumptionListCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AD89E02B837E940054F704 /* HomeConsumptionListCVCell.swift */; };
 		C6AD89E42B83829B0054F704 /* HomeSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AD89E32B83829B0054F704 /* HomeSectionHeaderView.swift */; };
+		C6AD89E62B83872E0054F704 /* ConsumptionSectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AD89E52B83872E0054F704 /* ConsumptionSectionFooterView.swift */; };
 		C6AFE70E2B81AE580021B510 /* WeeklySectionCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AFE70D2B81AE580021B510 /* WeeklySectionCVCell.swift */; };
 		C6AFE7102B81B2240021B510 /* ConsumptionStateCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AFE70F2B81B2240021B510 /* ConsumptionStateCVCell.swift */; };
 		C6AFE7122B81B8C00021B510 /* MonthlyInfoSectionCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AFE7112B81B8C00021B510 /* MonthlyInfoSectionCVCell.swift */; };
@@ -65,6 +66,7 @@
 		C6856AF72B7A063500528493 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		C6AD89E02B837E940054F704 /* HomeConsumptionListCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeConsumptionListCVCell.swift; sourceTree = "<group>"; };
 		C6AD89E32B83829B0054F704 /* HomeSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionHeaderView.swift; sourceTree = "<group>"; };
+		C6AD89E52B83872E0054F704 /* ConsumptionSectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumptionSectionFooterView.swift; sourceTree = "<group>"; };
 		C6AFE70D2B81AE580021B510 /* WeeklySectionCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklySectionCVCell.swift; sourceTree = "<group>"; };
 		C6AFE70F2B81B2240021B510 /* ConsumptionStateCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumptionStateCVCell.swift; sourceTree = "<group>"; };
 		C6AFE7112B81B8C00021B510 /* MonthlyInfoSectionCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyInfoSectionCVCell.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			children = (
 				C6AD89E32B83829B0054F704 /* HomeSectionHeaderView.swift */,
 				C6AD89E02B837E940054F704 /* HomeConsumptionListCVCell.swift */,
+				C6AD89E52B83872E0054F704 /* ConsumptionSectionFooterView.swift */,
 			);
 			path = HomeConsumptionSection;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				C67107462B7F872C00DFAA8D /* WeeklyConsumption.swift in Sources */,
 				C6CFAD302B7BA6B700D170D7 /* LocalStorageManager.swift in Sources */,
 				C6CFAD282B7B9D5800D170D7 /* DailyConsumptionDTO.swift in Sources */,
+				C6AD89E62B83872E0054F704 /* ConsumptionSectionFooterView.swift in Sources */,
 				C6F6ABA12B065128004473F4 /* Oh_Sobi.xcdatamodeld in Sources */,
 				C6CFAD342B7BBEEF00D170D7 /* GetMonthlyConsumptionUseCase.swift in Sources */,
 			);

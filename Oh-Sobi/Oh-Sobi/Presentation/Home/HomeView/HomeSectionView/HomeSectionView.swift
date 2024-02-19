@@ -9,8 +9,9 @@ import UIKit
 import SnapKit
 
 final class HomeSectionView: UIView {
+    private var dailyConsumptionList = ["1", "2", "3", "4", "1", "2", "3", "4", "1", "2", "3", "4"]
     private lazy var sectionCollectionView = UICollectionView(frame: .zero,
-                                                                   collectionViewLayout: UICollectionViewLayout())
+                                                              collectionViewLayout: UICollectionViewLayout())
     
     func setViewContents() {
         sectionCollectionView = createSectionCollectionView()
@@ -51,7 +52,7 @@ extension HomeSectionView: UICollectionViewDataSource, UICollectionViewDelegate 
         case .monthlyInfo:
             return 2
         case .consumptionList:
-            return 10 //임시로 10개 return
+            return dailyConsumptionList.count > 10 ? 10 : dailyConsumptionList.count
         }
     }
     
@@ -95,12 +96,19 @@ extension HomeSectionView: UICollectionViewDataSource, UICollectionViewDelegate 
         
         switch section {
         case .consumptionList:
-            guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "\(HomeSectionHeaderView.self)", for: indexPath) as? HomeSectionHeaderView else {
-                return UICollectionReusableView()
+            if kind == UICollectionView.elementKindSectionFooter && self.dailyConsumptionList.count > 10 {
+                guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "\(ConsumptionSectionFooterView.self)", for: indexPath) as? ConsumptionSectionFooterView else {
+                    return UICollectionReusableView()
+                }
+                header.setViewContents()
+                return header
+            } else {
+                guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "\(HomeSectionHeaderView.self)", for: indexPath) as? HomeSectionHeaderView else {
+                    return UICollectionReusableView()
+                }
+                header.setViewContents(title: "오늘의 소비")
+                return header
             }
-            header.setViewContents(title: "오늘의 소비")
-            
-            return header
         case .weeklyConsumption, .consumptionState, .monthlyInfo:
             return UICollectionReusableView()
         }
@@ -122,7 +130,11 @@ extension HomeSectionView {
         collectionView.register(HomeSectionHeaderView.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: "\(HomeSectionHeaderView.self)")
-        
+        if self.dailyConsumptionList.count > 10 {
+            collectionView.register(ConsumptionSectionFooterView.self,
+                                    forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
+                                    withReuseIdentifier: "\(ConsumptionSectionFooterView.self)")
+        }
         return collectionView
     }
     
@@ -181,7 +193,7 @@ extension HomeSectionView {
         let ratio = 100.0 / 361
         let size = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1 / 2), heightDimension: .fractionalWidth(ratio))
         let item = NSCollectionLayoutItem(layoutSize: size)
-        item.contentInsets = .init(top: 0, 
+        item.contentInsets = .init(top: 0,
                                    leading: margin(.width, 10),
                                    bottom: 0,
                                    trailing: margin(.width, 10))
@@ -214,8 +226,14 @@ extension HomeSectionView {
         let section = NSCollectionLayoutSection(group: group)
         let sectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(margin(.height, 36) + 20))
         section.boundarySupplementaryItems = [.init(layoutSize: sectionHeaderSize,
-                                              elementKind: UICollectionView.elementKindSectionHeader,
-                                              alignment: .topLeading)]
+                                                    elementKind: UICollectionView.elementKindSectionHeader,
+                                                    alignment: .topLeading)]
+        if dailyConsumptionList.count > 10 {
+            let sectionFooterSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(margin(.height, 16 * 2) + 45))
+            section.boundarySupplementaryItems.append(.init(layoutSize: sectionFooterSize,
+                                                            elementKind: UICollectionView.elementKindSectionFooter,
+                                                            alignment: .bottomLeading))
+        }
         
         section.contentInsets = .init(top: 0,
                                       leading: margin(.width, 24),
