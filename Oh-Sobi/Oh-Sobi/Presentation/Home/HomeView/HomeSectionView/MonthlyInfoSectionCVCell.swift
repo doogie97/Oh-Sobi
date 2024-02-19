@@ -17,7 +17,7 @@ final class MonthlyInfoSectionCVCell: UICollectionViewCell {
     
     private func setLayout() {
         self.contentView.layer.cornerRadius = 12
-        self.contentView.backgroundColor = .mainRed
+        self.contentView.backgroundColor = .ivoryBG
     }
     
     override func prepareForReuse() {

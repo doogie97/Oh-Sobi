@@ -49,7 +49,7 @@ extension HomeSectionView: UICollectionViewDataSource, UICollectionViewDelegate 
         case .consumptionState:
             return 1
         case .monthlyInfo:
-            return 3
+            return 2
         }
     }
     
