@@ -31,7 +31,7 @@ extension HomeSectionView: UICollectionViewDataSource, UICollectionViewDelegate 
         case weeklyConsumption = 0
         case consumptionState
         case monthlyInfo
-//        case consumptionList
+        case consumptionList
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -50,6 +50,8 @@ extension HomeSectionView: UICollectionViewDataSource, UICollectionViewDelegate 
             return 1
         case .monthlyInfo:
             return 2
+        case .consumptionList:
+            return 10 //임시로 10개 return
         }
     }
     
@@ -77,6 +79,12 @@ extension HomeSectionView: UICollectionViewDataSource, UICollectionViewDelegate 
             }
             cell.setCellContents()
             return cell
+        case .consumptionList:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(HomeConsumptionListCVCell.self)", for: indexPath) as? HomeConsumptionListCVCell else {
+                return UICollectionViewCell()
+            }
+            cell.setCellContents()
+            return cell
         }
     }
 }
@@ -91,6 +99,7 @@ extension HomeSectionView {
         collectionView.register(WeeklySectionCVCell.self, forCellWithReuseIdentifier: "\(WeeklySectionCVCell.self)")
         collectionView.register(ConsumptionStateCVCell.self, forCellWithReuseIdentifier: "\(ConsumptionStateCVCell.self)")
         collectionView.register(MonthlyInfoSectionCVCell.self, forCellWithReuseIdentifier: "\(MonthlyInfoSectionCVCell.self)")
+        collectionView.register(HomeConsumptionListCVCell.self, forCellWithReuseIdentifier: "\(HomeConsumptionListCVCell.self)")
         
         return collectionView
     }
@@ -108,6 +117,8 @@ extension HomeSectionView {
                 return self?.consumptionStateSectionLayout()
             case .monthlyInfo:
                 return self?.monthlyInfoSectionLayout()
+            case .consumptionList:
+                return self?.consumptionListSectionLayout()
             }
         }
     }
@@ -165,6 +176,24 @@ extension HomeSectionView {
                                       leading: 0,
                                       bottom: 0,
                                       trailing: 0)
+        
+        return section
+    }
+    
+    private func consumptionListSectionLayout() -> NSCollectionLayoutSection {
+        let heigt = 50 + margin(.height, 24)
+        let size = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(heigt))
+        let item = NSCollectionLayoutItem(layoutSize: size)
+        item.contentInsets = .init(top: margin(.height, 12), leading: 0, bottom: margin(.height, 12), trailing: 0)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                               heightDimension: .absolute(heigt))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
+                                                       subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = .init(top: margin(.height, 24),
+                                      leading: margin(.width, 24),
+                                      bottom: 0,
+                                      trailing: margin(.width, 24))
         
         return section
     }
