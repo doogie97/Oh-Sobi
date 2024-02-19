@@ -51,7 +51,7 @@ final class HomeView: UIView {
         }
         
         homeSectionView.snp.makeConstraints {
-            $0.top.equalTo(dateLabel.snp.bottom)
+            $0.top.equalTo(dateLabel.snp.bottom).inset(margin(.height, -16))
             $0.leading.trailing.bottom.equalToSuperview()
         }
     }
