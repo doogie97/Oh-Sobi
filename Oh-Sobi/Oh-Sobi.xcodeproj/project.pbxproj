@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7197BC722B8882860090A175 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7197BC712B8882860090A175 /* TestVC.swift */; };
 		71E7C14C2B7B426300E7BD1C /* CustomHalfModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7C14B2B7B426300E7BD1C /* CustomHalfModal.swift */; };
 		71E7C14F2B7B428C00E7BD1C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 71E7C14E2B7B428C00E7BD1C /* SnapKit */; };
 		C62DA2A22B7CFDA800283F0A /* UIFont + Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DA2A12B7CFDA800283F0A /* UIFont + Extenstion.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7197BC712B8882860090A175 /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
 		7197BC732B8882D50090A175 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		7197BC742B8882D50090A175 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		7197BC752B8882D50090A175 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				C6F6ABA42B065129004473F4 /* LaunchScreen.storyboard */,
+				7197BC712B8882860090A175 /* TestVC.swift */,
 				C6856AF42B7A060800528493 /* Home */,
 			);
 			path = Presentation;
@@ -371,6 +374,7 @@
 				C6AFE70E2B81AE580021B510 /* WeeklySectionCVCell.swift in Sources */,
 				C6AFE7122B81B8C00021B510 /* MonthlyInfoSectionCVCell.swift in Sources */,
 				C62DA2A22B7CFDA800283F0A /* UIFont + Extenstion.swift in Sources */,
+				7197BC722B8882860090A175 /* TestVC.swift in Sources */,
 				C6F6AB992B065128004473F4 /* SceneDelegate.swift in Sources */,
 				C6CFAD362B7BBFE400D170D7 /* Consumption.swift in Sources */,
 				C67107462B7F872C00DFAA8D /* WeeklyConsumption.swift in Sources */,
