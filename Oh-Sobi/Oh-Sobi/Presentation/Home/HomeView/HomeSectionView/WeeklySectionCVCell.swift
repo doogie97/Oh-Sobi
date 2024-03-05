@@ -46,11 +46,22 @@ final class WeeklySectionCVCell: UICollectionViewCell {
                 testView.backgroundColor = .blue
             }
             
+            let button = UIButton()
+            button.tag = index
+            button.addTarget(self, action: #selector(touchWeeklyConsumption), for: .touchUpInside)
+            
+            testView.addSubview(button)
+            button.snp.makeConstraints {
+                $0.edges.equalToSuperview()
+            }
             weeklyStackView.addArrangedSubview(testView)
         }
     }
     
-    func setCellContents() {
+    @objc private func touchWeeklyConsumption(_ sender: UIButton) {
+        viewModel?.touchWeeklyConsumption(sender.tag)
+    }
+    
     func setCellContents(viewModel: HomeVMable?) {
         self.viewModel = viewModel
         setWeeklyStackView(weeklyConsumption: [])
@@ -68,6 +79,7 @@ final class WeeklySectionCVCell: UICollectionViewCell {
         self.contentView.addSubview(weeklyStackView)
         self.contentView.addSubview(moveCalendarButton)
         
+        titleLabel.setContentHuggingPriority(.required, for: .vertical)
         titleLabel.snp.makeConstraints {
             $0.top.leading.equalToSuperview().inset(margin(.width, 16))
         }

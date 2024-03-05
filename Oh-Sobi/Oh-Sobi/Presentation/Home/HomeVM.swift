@@ -12,6 +12,7 @@ protocol HomeVMable: HomeVMInput, HomeVMOutput, AnyObject {}
 
 protocol HomeVMInput {
     func getInitialHomeInfo()
+    func touchWeeklyConsumption(_ index: Int)
 }
 
 protocol HomeVMOutput {
@@ -38,6 +39,14 @@ final class HomeVM: HomeVMable {
         self.viewContents = ViewContents(weeklyConsumption: weeklyConsumption)
         
         setViewContents.accept(())
+    }
+    
+    func touchWeeklyConsumption(_ index: Int) {
+        guard let consumption = viewContents?.weeklyConsumption.weeklyConsumptionList[safe: index] else {
+            return
+        }
+        
+        print(consumption?.date.yearMonthDay())
     }
     
     //MARK: - Output
