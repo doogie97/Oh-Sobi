@@ -9,7 +9,8 @@ import UIKit
 import SnapKit
 
 final class HomeConsumptionListCVCell: UICollectionViewCell {
-    func setCellContents() {
+    func setCellContents(consumption: Consumption) {
+        print(consumption.date.yearMonthDay().day)
         if self.contentView.subviews.isEmpty {
             setLayout()
         }

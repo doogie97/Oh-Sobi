@@ -10,7 +10,6 @@ import SnapKit
 
 final class HomeSectionView: UIView {
     private weak var viewModel: HomeVMable?
-    private var dailyConsumptionList = [Consumption]()
     private lazy var sectionCollectionView = UICollectionView(frame: .zero,
                                                               collectionViewLayout: UICollectionViewLayout())
     
@@ -20,20 +19,23 @@ final class HomeSectionView: UIView {
         setLayout()
     }
     
-    private func setDailyConsumptionList() {
+    private func dailyConsumptionList() -> [Consumption] {
         guard let weeklyConsumption = viewModel?.viewContents?.weeklyConsumption else {
-            return
+            return []
         }
         
+        var consumptionList = [Consumption]()
         weeklyConsumption.weeklyConsumptionList.forEach {
             if let consumption = $0 {
                 let consumptionDate =  consumption.date.yearMonthDay()
                 let todayDate = Date().yearMonthDay()
                 if consumptionDate.year == todayDate.year && consumptionDate.month == todayDate.month && consumptionDate.day == todayDate.day {
-                    self.dailyConsumptionList = consumption.consumptionList
+                    consumptionList = consumption.consumptionList
                 }
             }
         }
+        
+        return consumptionList
     }
     
     private func setLayout() {
@@ -70,7 +72,8 @@ extension HomeSectionView: UICollectionViewDataSource, UICollectionViewDelegate 
         case .monthlyInfo:
             return 2
         case .consumptionList:
-            return dailyConsumptionList.count > 10 ? 10 : dailyConsumptionList.count
+            let count = dailyConsumptionList().count
+            return count > 10 ? 10 : count
         }
     }
     
@@ -99,10 +102,12 @@ extension HomeSectionView: UICollectionViewDataSource, UICollectionViewDelegate 
             cell.setCellContents()
             return cell
         case .consumptionList:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(HomeConsumptionListCVCell.self)", for: indexPath) as? HomeConsumptionListCVCell else {
+            let dailyConsumptionList = dailyConsumptionList()
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(HomeConsumptionListCVCell.self)", for: indexPath) as? HomeConsumptionListCVCell,
+                  let consumption = dailyConsumptionList[safe: indexPath.row] else {
                 return UICollectionViewCell()
             }
-            cell.setCellContents()
+            cell.setCellContents(consumption: consumption)
             return cell
         }
     }
@@ -114,7 +119,8 @@ extension HomeSectionView: UICollectionViewDataSource, UICollectionViewDelegate 
         
         switch section {
         case .consumptionList:
-            if kind == UICollectionView.elementKindSectionFooter && self.dailyConsumptionList.count > 10 {
+            let dailyConsumptionList = dailyConsumptionList()
+            if kind == UICollectionView.elementKindSectionFooter && dailyConsumptionList.count > 10 {
                 guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "\(ConsumptionSectionFooterView.self)", for: indexPath) as? ConsumptionSectionFooterView else {
                     return UICollectionReusableView()
                 }
@@ -148,7 +154,7 @@ extension HomeSectionView {
         collectionView.register(HomeSectionHeaderView.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: "\(HomeSectionHeaderView.self)")
-        if self.dailyConsumptionList.count > 10 {
+        if self.dailyConsumptionList().count > 10 {
             collectionView.register(ConsumptionSectionFooterView.self,
                                     forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
                                     withReuseIdentifier: "\(ConsumptionSectionFooterView.self)")
@@ -246,7 +252,7 @@ extension HomeSectionView {
         section.boundarySupplementaryItems = [.init(layoutSize: sectionHeaderSize,
                                                     elementKind: UICollectionView.elementKindSectionHeader,
                                                     alignment: .topLeading)]
-        if dailyConsumptionList.count > 10 {
+        if dailyConsumptionList().count > 10 {
             let sectionFooterSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(margin(.height, 16 * 2) + 45))
             section.boundarySupplementaryItems.append(.init(layoutSize: sectionFooterSize,
                                                             elementKind: UICollectionView.elementKindSectionFooter,
