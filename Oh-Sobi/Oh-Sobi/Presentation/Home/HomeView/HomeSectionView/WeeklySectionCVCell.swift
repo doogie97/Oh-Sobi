@@ -37,25 +37,70 @@ final class WeeklySectionCVCell: UICollectionViewCell {
         return stackView
     }()
     
-    private func setWeeklyStackView(weeklyConsumption: [DailyConsumption?]) {
-        for index in 0..<7 {
-            let testView = UIView()
-            if index % 2 == 0 {
-                testView.backgroundColor = .red
-            } else {
-                testView.backgroundColor = .blue
-            }
-            
-            let button = UIButton()
-            button.tag = index
-            button.addTarget(self, action: #selector(touchWeeklyConsumption), for: .touchUpInside)
-            
-            testView.addSubview(button)
-            button.snp.makeConstraints {
-                $0.edges.equalToSuperview()
-            }
-            weeklyStackView.addArrangedSubview(testView)
+    private func setWeeklyStackView() {
+        guard let weeklyConsumption = viewModel?.viewContents?.weeklyConsumption.weeklyConsumptionList else {
+            return
         }
+        
+        for index in 0..<7 {
+            let view = UIView()
+            if let consumption = weeklyConsumption[safe: index] {
+                let dayOfTheWeek = OhsobiDateManager.DayOfTheWeek(rawValue: index + 1)?.shortKorean
+                let day = consumption?.day
+                
+                let dayOfTheWeekLabel = pretendardLabel(size: 12, text: dayOfTheWeek, textAlignment: .center)
+                let dayLabel = pretendardLabel(family: .SemiBold, size: 14, text: day?.description, textAlignment: .center)
+                let amountLabel = amountLabel(consumption: consumption)
+                
+                let button = UIButton()
+                button.tag = index
+                button.addTarget(self, action: #selector(touchWeeklyConsumption), for: .touchUpInside)
+                view.addSubview(dayOfTheWeekLabel)
+                view.addSubview(dayLabel)
+                view.addSubview(amountLabel)
+                view.addSubview(button)
+                
+                dayOfTheWeekLabel.snp.makeConstraints {
+                    $0.top.leading.trailing.equalToSuperview()
+                }
+                
+                dayLabel.snp.makeConstraints {
+                    $0.top.equalTo(dayOfTheWeekLabel.snp.bottom).inset(margin(.height, -8))
+                    $0.leading.trailing.equalToSuperview()
+                }
+                
+                amountLabel.snp.makeConstraints {
+                    $0.top.equalTo(dayLabel.snp.bottom).inset(margin(.height, -8))
+                    $0.leading.trailing.equalToSuperview()
+                }
+                
+                button.snp.makeConstraints {
+                    $0.edges.equalToSuperview()
+                }
+            }
+            weeklyStackView.addArrangedSubview(view)
+        }
+    }
+    
+    private func amountLabel(consumption: DailyConsumption?) -> UILabel {
+        let amount = consumption?.consumptionList.reduce(0) { result, consumption in
+            return result + consumption.amount
+        }
+        
+        let amountLabel = pretendardLabel(size: 10, textAlignment: .center)
+        if let amount = amount {
+            if amount == 0 {
+                amountLabel.text = "0"
+            } else if amount > 0 {
+                amountLabel.text = "+\(amount)"
+                amountLabel.textColor = .mainGreen
+            } else if amount < 0 {
+                amountLabel.text = "\(amount)"
+                amountLabel.textColor = .mainRed
+            }
+        }
+        
+        return amountLabel
     }
     
     @objc private func touchWeeklyConsumption(_ sender: UIButton) {
@@ -64,7 +109,7 @@ final class WeeklySectionCVCell: UICollectionViewCell {
     
     func setCellContents(viewModel: HomeVMable?) {
         self.viewModel = viewModel
-        setWeeklyStackView(weeklyConsumption: [])
+        setWeeklyStackView()
         if self.contentView.subviews.isEmpty {
             setLayout()
         }
