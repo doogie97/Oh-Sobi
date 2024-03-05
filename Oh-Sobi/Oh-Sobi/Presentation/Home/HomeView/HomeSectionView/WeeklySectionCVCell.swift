@@ -50,6 +50,12 @@ final class WeeklySectionCVCell: UICollectionViewCell {
                 
                 let dayOfTheWeekLabel = pretendardLabel(size: 12, text: dayOfTheWeek, textAlignment: .center)
                 let dayLabel = pretendardLabel(family: .SemiBold, size: 14, text: day?.description, textAlignment: .center)
+                if consumption?.day == Date().yearMonthDay().day {
+                    dayLabel.clipsToBounds = true
+                    dayLabel.layer.cornerRadius = 6
+                    dayLabel.backgroundColor = .mainBlack
+                    dayLabel.textColor = .white
+                }
                 let amountLabel = amountLabel(consumption: consumption)
                 
                 let button = UIButton()
@@ -66,7 +72,8 @@ final class WeeklySectionCVCell: UICollectionViewCell {
                 
                 dayLabel.snp.makeConstraints {
                     $0.top.equalTo(dayOfTheWeekLabel.snp.bottom).inset(margin(.height, -8))
-                    $0.leading.trailing.equalToSuperview()
+                    $0.centerX.equalToSuperview()
+                    $0.height.width.equalTo(margin(.width, 25))
                 }
                 
                 amountLabel.snp.makeConstraints {
@@ -139,7 +146,7 @@ final class WeeklySectionCVCell: UICollectionViewCell {
         weeklyStackView.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).inset(margin(.height, -16))
             $0.leading.trailing.equalToSuperview().inset(margin(.width, 10))
-            $0.bottom.equalToSuperview().inset(margin(.height, 16))
+            $0.bottom.equalToSuperview()
         }
         
         moveCalendarButton.snp.makeConstraints {
