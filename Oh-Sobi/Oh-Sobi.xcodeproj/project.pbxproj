@@ -29,7 +29,6 @@
 		C6AD89E42B83829B0054F704 /* HomeSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AD89E32B83829B0054F704 /* HomeSectionHeaderView.swift */; };
 		C6AD89E62B83872E0054F704 /* ConsumptionSectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AD89E52B83872E0054F704 /* ConsumptionSectionFooterView.swift */; };
 		C6AD89E82B838F330054F704 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = C6AD89E72B838F330054F704 /* RxCocoa */; };
-		C6AD89EA2B838F330054F704 /* RxCocoa-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = C6AD89E92B838F330054F704 /* RxCocoa-Dynamic */; };
 		C6AD89EC2B838F330054F704 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = C6AD89EB2B838F330054F704 /* RxRelay */; };
 		C6AFE70E2B81AE580021B510 /* WeeklySectionCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AFE70D2B81AE580021B510 /* WeeklySectionCVCell.swift */; };
 		C6AFE7102B81B2240021B510 /* ConsumptionStateCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AFE70F2B81B2240021B510 /* ConsumptionStateCVCell.swift */; };
@@ -51,6 +50,19 @@
 		C6F6ABA32B065129004473F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6F6ABA22B065129004473F4 /* Assets.xcassets */; };
 		C6F6ABA62B065129004473F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6F6ABA42B065129004473F4 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C61026432B9761310002E2D8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		71E7C14B2B7B426300E7BD1C /* CustomHalfModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHalfModal.swift; sourceTree = "<group>"; };
@@ -102,7 +114,6 @@
 			files = (
 				C6AD89EC2B838F330054F704 /* RxRelay in Frameworks */,
 				C67107442B7F867E00DFAA8D /* RxRelay in Frameworks */,
-				C6AD89EA2B838F330054F704 /* RxCocoa-Dynamic in Frameworks */,
 				C67107422B7F867E00DFAA8D /* RxCocoa in Frameworks */,
 				C6AD89E82B838F330054F704 /* RxCocoa in Frameworks */,
 				71E7C14F2B7B428C00E7BD1C /* SnapKit in Frameworks */,
@@ -312,6 +323,7 @@
 				C6F6AB8F2B065128004473F4 /* Sources */,
 				C6F6AB902B065128004473F4 /* Frameworks */,
 				C6F6AB912B065128004473F4 /* Resources */,
+				C61026432B9761310002E2D8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -323,7 +335,6 @@
 				C67107412B7F867E00DFAA8D /* RxCocoa */,
 				C67107432B7F867E00DFAA8D /* RxRelay */,
 				C6AD89E72B838F330054F704 /* RxCocoa */,
-				C6AD89E92B838F330054F704 /* RxCocoa-Dynamic */,
 				C6AD89EB2B838F330054F704 /* RxRelay */,
 			);
 			productName = "Oh-Sobi";
@@ -685,11 +696,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C67107402B7F867E00DFAA8D /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
-		};
-		C6AD89E92B838F330054F704 /* RxCocoa-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C67107402B7F867E00DFAA8D /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = "RxCocoa-Dynamic";
 		};
 		C6AD89EB2B838F330054F704 /* RxRelay */ = {
 			isa = XCSwiftPackageProductDependency;
