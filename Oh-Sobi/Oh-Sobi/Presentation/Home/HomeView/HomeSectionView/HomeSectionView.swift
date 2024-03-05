@@ -84,7 +84,7 @@ extension HomeSectionView: UICollectionViewDataSource, UICollectionViewDelegate 
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(WeeklySectionCVCell.self)", for: indexPath) as? WeeklySectionCVCell else {
                 return UICollectionViewCell()
             }
-            cell.setCellContents()
+            cell.setCellContents(viewModel: self.viewModel)
             return cell
         case .consumptionState:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(ConsumptionStateCVCell.self)", for: indexPath) as? ConsumptionStateCVCell else {

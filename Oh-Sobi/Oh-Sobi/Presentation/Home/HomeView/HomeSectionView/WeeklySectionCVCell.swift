@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 
 final class WeeklySectionCVCell: UICollectionViewCell {
+    private weak var viewModel: HomeVMable?
     private lazy var titleLabel = pretendardLabel(family: .Bold, size: 16, text: "주간 소비")
     private lazy var rightIndicator = {
         let indicator = UIImage(systemName: "chevron.right")?.withRenderingMode(.alwaysTemplate)
@@ -50,6 +51,8 @@ final class WeeklySectionCVCell: UICollectionViewCell {
     }
     
     func setCellContents() {
+    func setCellContents(viewModel: HomeVMable?) {
+        self.viewModel = viewModel
         setWeeklyStackView(weeklyConsumption: [])
         if self.contentView.subviews.isEmpty {
             setLayout()
@@ -90,5 +93,7 @@ final class WeeklySectionCVCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        self.viewModel = nil
+        self.weeklyStackView.subviews.forEach { $0.removeFromSuperview() }
     }
 }
