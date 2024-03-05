@@ -11,7 +11,7 @@ protocol LocalStorageManagerable {
     func getMontlyConsumption(year: Int, month: Int) -> MontlyConsumptionDTO?
     func getDailyConsumption(ymd: YearMonthDay) -> DailyConsumptionDTO?
     /// 한 주의 DailyConsumption 7개 반환
-    ///
+    /// 해당 일자에 소비가 없으면 빈 소비로 배열을 채워 7개의 요소의 배열 return
     /// - Parameters:
     ///   - ymd : YearMonthDay
     /// - Returns: ymd를 받고 그 주의 일요일 기준 7개의 일일 소비 배열 반환
