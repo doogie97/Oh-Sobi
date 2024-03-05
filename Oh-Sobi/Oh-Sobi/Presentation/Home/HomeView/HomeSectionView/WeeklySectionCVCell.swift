@@ -26,7 +26,7 @@ final class WeeklySectionCVCell: UICollectionViewCell {
     }()
     
     @objc private func touchMoveCalendarButton() {
-        print("touch moveCalendarButton")
+        viewModel?.touchMoveCalendarButton()
     }
     
     private lazy var weeklyStackView = {

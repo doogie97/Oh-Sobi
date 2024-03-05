@@ -12,6 +12,7 @@ protocol HomeVMable: HomeVMInput, HomeVMOutput, AnyObject {}
 
 protocol HomeVMInput {
     func getInitialHomeInfo()
+    func touchMoveCalendarButton()
     func touchWeeklyConsumption(_ index: Int)
 }
 
@@ -39,6 +40,10 @@ final class HomeVM: HomeVMable {
         self.viewContents = ViewContents(weeklyConsumption: weeklyConsumption)
         
         setViewContents.accept(())
+    }
+    
+    func touchMoveCalendarButton() {
+        print("달력으로 이동")
     }
     
     func touchWeeklyConsumption(_ index: Int) {
