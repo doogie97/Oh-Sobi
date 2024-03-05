@@ -29,7 +29,7 @@ final class OhsobiDateManager {
         return date
     }
     
-    enum Day: Int {
+    enum DayOfTheWeek: Int {
         case SUN = 1
         case MON
         case TUE
@@ -37,9 +37,28 @@ final class OhsobiDateManager {
         case THU
         case FRI
         case SAT
+        
+        var shortKorean: String {
+            switch self {
+            case .SUN:
+                return "일"
+            case .MON:
+                return "월"
+            case .TUE:
+                return "화"
+            case .WED:
+                return "수"
+            case .THU:
+                return "목"
+            case .FRI:
+                return "금"
+            case .SAT:
+                return "토"
+            }
+        }
     }
     
-    func getWeekday(ymd: YearMonthDay) -> Day? {
+    func getWeekday(ymd: YearMonthDay) -> DayOfTheWeek? {
         let calendar = Calendar.current
         
         var components = DateComponents()
@@ -49,7 +68,7 @@ final class OhsobiDateManager {
         
         if let date = calendar.date(from: components) {
             let weekdayInt = calendar.component(.weekday, from: date)
-            return Day(rawValue: weekdayInt) ?? nil
+            return DayOfTheWeek(rawValue: weekdayInt) ?? nil
         } else {
             return nil
         }
