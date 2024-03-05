@@ -36,8 +36,8 @@ class HomeVC: UIViewController {
     
     private func bindViewModel() {
         viewModel.setViewContents.withUnretained(self)
-            .subscribe(onNext: { owner, viewContents in
-                owner.homeView.setViewContents(viewContents: viewContents)
+            .subscribe(onNext: { owner, _ in
+                owner.homeView.setViewContents(viewModel: owner.viewModel)
             })
             .disposed(by: disposeBag)
     }

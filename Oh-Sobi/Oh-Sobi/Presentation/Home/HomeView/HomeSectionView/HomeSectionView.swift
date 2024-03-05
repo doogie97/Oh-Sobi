@@ -9,12 +9,23 @@ import UIKit
 import SnapKit
 
 final class HomeSectionView: UIView {
+    private weak var viewModel: HomeVMable?
     private var dailyConsumptionList = [Consumption]()
     private lazy var sectionCollectionView = UICollectionView(frame: .zero,
                                                               collectionViewLayout: UICollectionViewLayout())
     
-    func setViewContents(viewContents: HomeVM.ViewContents) {
-        viewContents.weeklyConsumption.weeklyConsumptionList.forEach {
+    func setViewContents(viewModel: HomeVMable?) {
+        self.viewModel = viewModel
+        sectionCollectionView = createSectionCollectionView()
+        setLayout()
+    }
+    
+    private func setDailyConsumptionList() {
+        guard let weeklyConsumption = viewModel?.viewContents?.weeklyConsumption else {
+            return
+        }
+        
+        weeklyConsumption.weeklyConsumptionList.forEach {
             if let consumption = $0 {
                 let consumptionDate =  consumption.date.yearMonthDay()
                 let todayDate = Date().yearMonthDay()
@@ -23,8 +34,6 @@ final class HomeSectionView: UIView {
                 }
             }
         }
-        sectionCollectionView = createSectionCollectionView()
-        setLayout()
     }
     
     private func setLayout() {

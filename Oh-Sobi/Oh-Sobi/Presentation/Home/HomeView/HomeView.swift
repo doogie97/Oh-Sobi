@@ -9,13 +9,14 @@ import UIKit
 import SnapKit
 
 final class HomeView: UIView {
+    private weak var viewModel: HomeVMable?
     private lazy var dayLabel = pretendardLabel(family: .Bold, size: 18)
     private lazy var dateLabel = pretendardLabel(family: .Regular, size: 14)
     
     private lazy var homeSectionView = HomeSectionView()
     
-    func setViewContents(viewContents: HomeVM.ViewContents) {
-        homeSectionView.setViewContents(viewContents: viewContents)
+    func setViewContents(viewModel: HomeVMable?) {
+        homeSectionView.setViewContents(viewModel: self.viewModel)
         setDateLabel()
         setLayout()
     }
